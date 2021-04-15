@@ -4,31 +4,15 @@
     <!-- Main Widget -->
     <div class="cleanslate">
       <ccw-w :class="{flatten: flatten}" :id="`ccw-container-${_uid}`" :size="size" :dark="dark" @click="handleClick">
-        <ccw-brand>
-          <img logo svg-inline src="./climateclock.svg">
-          <ccw-span>#ActInTime</ccw-span>
-        </ccw-brand>
         <ccw-flexwrap>
           <ccw-panel deadline>
-            <ccw-div>
-              <ccw-span>DEADLINE</ccw-span>
-              <ccw-span>{{ carbon.label }}</ccw-span>
-            </ccw-div>
             <ccw-readout>
               {{ remaining.years }}<ccw-span>YRS</ccw-span>{{ pad(remaining.days, 3) }}<ccw-span>DAYS</ccw-span>{{ pad(remaining.hours, 2) }}<ccw-span>:</ccw-span>{{ pad(remaining.minutes, 2) }}<ccw-span>:</ccw-span>{{ pad(remaining.seconds, 2) }}
             </ccw-readout>
           </ccw-panel>
           <ccw-panel lifeline>
-            <ccw-div>
-              <ccw-span>LIFELINE</ccw-span>
-              <ccw-span>{{ renewables.label }}</ccw-span>
-            </ccw-div>
             <ccw-readout>{{ renewablePercent.split('.')[0] }}<ccw-span>.</ccw-span>{{ renewablePercent.split('.')[1]}}%</ccw-readout>
           </ccw-panel>
-          <ccw-ticker>
-            <ccw-div one :style="animationDuration">{{ feedText }}</ccw-div>
-            <ccw-div two :style="animationDuration">{{ feedText }}</ccw-div>
-          </ccw-ticker>
         </ccw-flexwrap>
       </ccw-w>
     </div>
@@ -332,7 +316,7 @@ ccw-span {
 
 // An arbitrary measure which nevertheless gets used a lot (16 * 7 = 112)
 //$cubit: 7rem; 
-$cubit: 112px;
+$cubit: 226px;
 
 ccw-w {
   cursor: pointer;
@@ -403,7 +387,7 @@ ccw-panel {
   flex-direction: column;
   justify-content: space-between;
   text-transform: uppercase;
-  color: black;
+  color: white;
 
   flex: 1 0 49%; // 50% causes wrapping!
   overflow: hidden;
@@ -459,14 +443,14 @@ ccw-panel {
     }
     ccw-span:first-of-type {
       background: $accent;
-      color: black;
+      color: white;
     }
     ccw-w[dark] & {
       color: $accent;
       background: $accentDark;
       ccw-span:first-of-type {
         background: $accentDark;
-        color: $accent;
+        color: white;
       }
     }
     ccw-w[size="lg"] & {
@@ -481,7 +465,7 @@ ccw-panel {
     }
     ccw-span:first-of-type {
       background: $secondary;
-      color: black;
+      color: white;
     }
     ccw-w[dark] & {
       color: $secondary;
@@ -501,7 +485,7 @@ $ccwFont: 70px;
 ccw-readout {
   flex: 2 0 0;
   font-size: 59px;
-  line-height: 1.1;
+  line-height: 2.0;
   text-align: left;
   margin: 0 12px;
   position: relative;
@@ -511,7 +495,7 @@ ccw-readout {
     font-size: 50px;
   }
   ccw-w[size="md"] & {
-    font-size: 50px;
+    font-size: 90px;
   }
   ccw-w[size="sm"] & {
     font-size: 35px;
