@@ -7,12 +7,39 @@
         <ccw-flexwrap>
           <ccw-panel deadline>
             <ccw-readout>
+              DEADLINE: WE MUST REACH ZERO EMISSIONS IN
+            </ccw-readout>
+          </ccw-panel>
+          <ccw-panel deadline>
+            <ccw-readout>
               {{ remaining.years }}<ccw-span>YRS</ccw-span>{{ pad(remaining.days, 3) }}<ccw-span>DAYS</ccw-span>{{ pad(remaining.hours, 2) }}<ccw-span>:</ccw-span>{{ pad(remaining.minutes, 2) }}<ccw-span>:</ccw-span>{{ pad(remaining.seconds, 2) }}
+            </ccw-readout>
+          </ccw-panel>
+          <ccw-panel lifeline>
+            <ccw-readout>
+              LIFELINE: % OF WORLD'S ENERGY FROM RENEWABLES
             </ccw-readout>
           </ccw-panel>
           <ccw-panel lifeline>
             <ccw-readout>{{ renewablePercent.split('.')[0] }}<ccw-span>.</ccw-span>{{ renewablePercent.split('.')[1]}}%</ccw-readout>
           </ccw-panel>
+          <!-- <ccw-panel deadline>
+            <ccw-ticker>
+              <ccw-div one :style="animationDuration">{{ feedText }}</ccw-div>
+              <ccw-div two :style="animationDuration">{{ feedText }}</ccw-div>
+            </ccw-ticker>
+          </ccw-panel> -->
+          <ccw-panel>
+            <ccw-readout>
+              ACT NOW
+            </ccw-readout>
+          </ccw-panel>
+          <ccw-panel>
+            <ccw-readout>
+              TIME REMAINS
+            </ccw-readout>
+          </ccw-panel>
+
         </ccw-flexwrap>
       </ccw-w>
     </div>
@@ -163,7 +190,8 @@ export default {
       return {animationDuration: .15 * this.feedText.length + 's'}
     },
     feedText() {
-      return (this.lifeline ? `${this.lifeline} | ` : '') + this.feed
+      return "DEADLINE: WE MUST ACHIEVE ZERO EMISSIONS IN"
+      // return (this.lifeline ? `${this.lifeline} | ` : '') + this.feed
     },
 
     // Chart thing
@@ -332,7 +360,7 @@ ccw-w {
   position: relative;
   width: 100%;
   white-space: nowrap;
-  overflow: hidden;
+  // overflow: hidden;
 
   &.flatten, 
   &[size="xl"].flatten, 
@@ -390,7 +418,8 @@ ccw-panel {
   color: white;
 
   flex: 1 0 49%; // 50% causes wrapping!
-  overflow: hidden;
+  // overflow: hidden;
+  text-align: center;
 
   height: $cubit - 24px;
   ccw-w[size="lg"] & {
@@ -486,10 +515,11 @@ ccw-readout {
   flex: 2 0 0;
   font-size: 59px;
   line-height: 2.0;
-  text-align: left;
+  text-align: center;
   margin: 0 12px;
   position: relative;
-  overflow: hidden;
+  // overflow: hidden;
+
   ccw-w[size="lg"] & {
     line-height: 1.3;
     font-size: 50px;
