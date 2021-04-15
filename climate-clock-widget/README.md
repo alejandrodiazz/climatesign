@@ -1,5 +1,3 @@
-# climatesign
-HTML Pages to display on MIT Building for Climate Action
 # How to build the CLIMATECLOCK widget yourself
 
 ### Install prerequisites
