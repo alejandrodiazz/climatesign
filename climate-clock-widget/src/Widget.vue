@@ -7,33 +7,12 @@
         <ccw-flexwrap>
           <ccw-panel deadline>
             <ccw-readout>
-              {{feedText}}
-            </ccw-readout>
-          </ccw-panel>
-          <ccw-panel deadline>
-            <ccw-readout>
               {{ remaining.years }}<ccw-span>YRS</ccw-span>{{ pad(remaining.days, 3) }}<ccw-span>DAYS</ccw-span>{{ pad(remaining.hours, 2) }}<ccw-span>:</ccw-span>{{ pad(remaining.minutes, 2) }}<ccw-span>:</ccw-span>{{ pad(remaining.seconds, 2) }}
             </ccw-readout>
           </ccw-panel>
-          <ccw-ticker lifeline>
-            <ccw-readout>
-              LIFELINE: % OF WORLD'S ENERGY FROM RENEWABLES
-            </ccw-readout>
-          </ccw-ticker>
-          <ccw-panel lifeline>
+          <!-- <ccw-panel lifeline>
             <ccw-readout>{{ renewablePercent.split('.')[0] }}<ccw-span>.</ccw-span>{{ renewablePercent.split('.')[1]}}%</ccw-readout>
-          </ccw-panel>
-          <ccw-panel>
-            <ccw-readout>
-              ACT NOW
-            </ccw-readout>
-          </ccw-panel>
-          <ccw-panel>
-            <ccw-readout>
-              TIME REMAINS
-            </ccw-readout>
-          </ccw-panel>
-
+          </ccw-panel> -->
         </ccw-flexwrap>
       </ccw-w>
     </div>

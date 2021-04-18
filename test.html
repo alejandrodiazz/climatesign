@@ -6,22 +6,55 @@
       body {
         background-color: black;
       }
-    </style>
 
+      .row {
+        white-space: nowrap;
+        height: 190px;
+        color: white;
+        text-align: center;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        font-size: 90px;
+        box-sizing: border-box;
+      }
+
+      .green {
+        background-color: #009a59;
+      }
+
+      .red {
+        background-color: red;
+      }
+    </style>
 	</head>
 
 	<body>
+    <div class="row green" style="overflow: hidden">
+      GOAL: LIMIT GLOBAL TEMPERATURE RISE TO 1.5 &deg; C
+    </div>
+    <div class="row red">
+      CARBON BUDGET
+    </div>
+    <div class="row red" id="clockbox"></div>
 		<!-- <script src="https://climateclock.world/widget-v2.js" async></script> -->
-		<script src="./climate-clock-widget/dist/widget-v2.js" async></script>
-		<div>
+		<script src="./TestingJenning/widget-deadline.js" async></script>
+    <div class="row red" style="overflow: hidden">
+      DEADLINE: ZERO EMISSIONS BY
+    </div>
+    <div>
 			<climate-clock />
 		</div>
+    <div class="row green" style="overflow: hidden">
+      LIFELINE: % OF WORLD'S ENERGY FROM RENEWABLES
+    </div>
+    <script src="./TestingJenning/widget-lifeline.js" async></script>
+    <div>
+      <climate-clock />
+    </div>
 
 
 		<br><br>
-		<div style="color: white;" id="clockbox"></div>
-		<p style="color:white;">Hello</p>
-
+		<!-- <div style="color: white;" id="clockbox"></div> -->
 		
 
 		<!-- Saturday April 17th 8:31pm
