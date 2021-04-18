@@ -96,16 +96,17 @@
 			else if(nhour==12){ap=" PM";}
 			else if(nhour>12){ap=" PM";nhour-=12;}
 
-			if(nmin<=9) nmin="0"+nmin;
-			if(nsec<=9) nsec="0"+nsec;
+			// if(nmin<=9) nmin="0"+nmin;
+			// if(nsec<=9) nsec="0"+nsec;
 
 			var second_standard = 4*30*24*60*60 	+ 17 * 24*60*60		+ 20 * 60*60	+ 31 *60 	+ 0
-			var seconds_in_year = nmonth*30*24*60*60+ ndate *24*60*60	+  nhour*60*60 	+ nmin *60 + nsec
-			var difference = seconds_in_year - second_standard
+			var current_seconds = (nmonth+1)*30*24*60*60+ ndate *24*60*60	+  nhour*60*60 	+ nmin *60 + nsec
+			var difference = current_seconds - second_standard
 
-			var carbon_budget = 281688835843 - difference * 1331
+			var carbon_budget = 281688835843 - (difference * 1331)
+			// var debug = String(nmonth) +","+ String(ndate) +","+ String(nhour) +","+ String(nmin) +","+ String(nsec)
 
-			var clocktext=""+String(carbon_budget)+"";
+			var clocktext=String(carbon_budget) ;
 			// var clocktext=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
 			document.getElementById('clockbox').innerHTML=clocktext;
 		}
