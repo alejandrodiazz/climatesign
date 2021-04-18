@@ -7,7 +7,7 @@
         <ccw-flexwrap>
           <ccw-panel deadline>
             <ccw-readout>
-              DEADLINE: WE MUST REACH ZERO EMISSIONS IN
+              {{feedText}}
             </ccw-readout>
           </ccw-panel>
           <ccw-panel deadline>
@@ -15,20 +15,14 @@
               {{ remaining.years }}<ccw-span>YRS</ccw-span>{{ pad(remaining.days, 3) }}<ccw-span>DAYS</ccw-span>{{ pad(remaining.hours, 2) }}<ccw-span>:</ccw-span>{{ pad(remaining.minutes, 2) }}<ccw-span>:</ccw-span>{{ pad(remaining.seconds, 2) }}
             </ccw-readout>
           </ccw-panel>
-          <ccw-panel lifeline>
+          <ccw-ticker lifeline>
             <ccw-readout>
               LIFELINE: % OF WORLD'S ENERGY FROM RENEWABLES
             </ccw-readout>
-          </ccw-panel>
+          </ccw-ticker>
           <ccw-panel lifeline>
             <ccw-readout>{{ renewablePercent.split('.')[0] }}<ccw-span>.</ccw-span>{{ renewablePercent.split('.')[1]}}%</ccw-readout>
           </ccw-panel>
-          <!-- <ccw-panel deadline>
-            <ccw-ticker>
-              <ccw-div one :style="animationDuration">{{ feedText }}</ccw-div>
-              <ccw-div two :style="animationDuration">{{ feedText }}</ccw-div>
-            </ccw-ticker>
-          </ccw-panel> -->
           <ccw-panel>
             <ccw-readout>
               ACT NOW
@@ -187,7 +181,7 @@ export default {
 
     // Items below are skin/theme-specific
     animationDuration() {
-      return {animationDuration: .15 * this.feedText.length + 's'}
+      return {animationDuration: .50 * this.feedText.length + 's'}
     },
     feedText() {
       return "DEADLINE: WE MUST ACHIEVE ZERO EMISSIONS IN"
@@ -381,12 +375,12 @@ ccw-w {
     font-size: 13.75px;
   }
   &[size="md"]{
-    font-size: 14.25px;
+    font-size:  70px;
     height: 2 * ($cubit - 24px);
     flex-direction: row; 
   }
   &[size="sm"] {
-    font-size: 11px;
+    font-size: 70px;
     height: 2 * ($cubit - 36px);
     flex-direction: row; 
   }
@@ -566,7 +560,7 @@ ccw-readout {
 }
 ccw-ticker {
   position: relative;
-  height: 32px;
+  height: 200px;
   text-transform: uppercase;
   text-align: left;
   overflow: hidden;
