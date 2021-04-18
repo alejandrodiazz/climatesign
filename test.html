@@ -7,6 +7,12 @@
         font-family: "KatwijkMono"; 
         src: url('./KatwijkMono-Bold.otf');
       }
+
+      @keyframes floatText {
+        to {
+          transform: translateX(-100%);
+        }
+      }
     
       body {
         background-color: black;
@@ -24,6 +30,10 @@
         box-sizing: border-box;
       }
 
+      .scroll {
+        animation: floatText 25s infinite linear;
+      }
+
       .green {
         background-color: #009a59;
       }
@@ -36,7 +46,9 @@
 
 	<body>
     <div class="row green" style="overflow: hidden">
-      GOAL: LIMIT GLOBAL TEMPERATURE RISE TO 1.5 &deg; C
+      <div class="scroll">
+        GOAL: LIMIT GLOBAL TEMPERATURE RISE TO 1.5 &deg; C
+      </div>
     </div>
     <div class="row red">
       CARBON BUDGET
@@ -44,7 +56,9 @@
     <div class="row red" id="clockbox"></div>
 		<!-- <script src="https://climateclock.world/widget-v2.js" async></script> -->
     <div class="row green" style="overflow: hidden">
-      LIFELINE: % OF WORLD'S ENERGY FROM RENEWABLES
+      <div class="scroll">
+        LIFELINE: % OF WORLD'S ENERGY FROM RENEWABLES
+      </div>
     </div>
     <script src="./TestingJenning/widget-lifeline.js" async></script>
     <div>
@@ -52,7 +66,9 @@
     </div>
     <script src="./TestingJenning/widget-deadline.js" async></script>
     <div class="row red" style="overflow: hidden">
-      DEADLINE: ZERO EMISSIONS BY
+      <div class="scroll">
+        DEADLINE: ZERO EMISSIONS BY
+      </div>
     </div>
     <div>
 			<climate-clock />
