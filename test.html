@@ -10,7 +10,7 @@
 
       @keyframes floatText {
         to {
-          transform: translateX(-100%);
+          transform: translateX(-280%);
         }
       }
     
@@ -31,7 +31,13 @@
       }
 
       .scroll {
-        animation: floatText 25s infinite linear;
+        animation: floatText 16s forwards linear;
+        animation-delay: 1s;
+      }
+
+      .scrollDeadline {
+        animation: floatText 12s forwards linear;
+        animation-delay: 1s;
       }
 
       .green {
@@ -47,15 +53,15 @@
 	<body>
     <div class="row green" id="item1" style="overflow: hidden">
       <div class="scroll" >
-        GOAL: LIMIT GLOBAL TEMPERATURE RISE TO 1.5&deg;C
+        GOAL: LIMIT GLOBAL TEMPERATURE RISE TO 1.5&deg;C (2.7&deg;F)
       </div>
     </div>
 
     <div class="row red" id="item2">
-      CARBON BUDGET
+      CARBON BUDGET:
     </div>
 
-    <div class="row red" id="item3"></div>
+    <div class="row red" id="item3" style="font-size: 70px;"></div>
 
     <div class="row green" id="item4" style="overflow: hidden">
       <div class="scroll">
@@ -70,7 +76,7 @@
 
     <script src="./TestingJenning/widget-deadline.js" async></script>
     <div class="row red" id="item6" style="overflow: hidden">
-      <div class="scroll">
+      <div class="scrollDeadline">
         DEADLINE: ZERO EMISSIONS BY
       </div>
     </div>
@@ -111,7 +117,7 @@
 			var carbon_budget = 281688835843 - (difference * 1331)
 			// var debug = String(nmonth) +","+ String(ndate) +","+ String(nhour) +","+ String(nmin) +","+ String(nsec)
 
-			var clocktext=String(carbon_budget) ;
+			var clocktext=String(carbon_budget) + "<div style=\"font-size: 40px\"> TONNES CARBON </div>";
 			// var clocktext=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
 			document.getElementById('item3').innerHTML=clocktext;
 
@@ -119,7 +125,7 @@
 
 			// ###### STUFFF FOR TRANSITIONS###########
 			var div_list = [document.getElementById("item1"), document.getElementById("item2"), document.getElementById("item3"), document.getElementById("item4"), document.getElementById("item5"), document.getElementById("item6"), document.getElementById("item7")];
-			var timing_list = [10, 10, 10, 10, 10, 10, 10];
+			var timing_list = [16, 10, 12, 13, 12, 7, 12];
 			function clear() {
 		  		for(i=0;i<7;i++){
 					div_list[i].style.display = "none";
