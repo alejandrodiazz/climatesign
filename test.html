@@ -24,7 +24,7 @@
         height: 190px;
         color: white;
         text-align: center;
-        padding-top: 30px;
+        padding-top: 40px;
         padding-bottom: 30px;
         font-size: 90px;
         box-sizing: border-box;
@@ -57,11 +57,13 @@
       </div>
     </div>
 
-    <div class="row red" id="item2">
-      CARBON BUDGET:
+    <div class="row red" id="item2" style="overflow: hidden">
+      <div class="scroll">
+        CO2 EMISSIONS BUDGET:
+      </div>
     </div>
 
-    <div class="row red" id="item3" style="font-size: 70px;"></div>
+    <div class="row red" id="item3" style="font-size: 70px; padding-top: 30px"></div>
 
     <div class="row green" id="item4" style="overflow: hidden">
       <div class="scroll">
@@ -117,7 +119,7 @@
 			var carbon_budget = 281688835843 - (difference * 1331)
 			// var debug = String(nmonth) +","+ String(ndate) +","+ String(nhour) +","+ String(nmin) +","+ String(nsec)
 
-			var clocktext=String(carbon_budget) + "<div style=\"font-size: 40px\"> TONNES CARBON </div>";
+			var clocktext=String(carbon_budget) + "<div style=\"font-size: 40px\"> TONNES OF CO2 </div>";
 			// var clocktext=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
 			document.getElementById('item3').innerHTML=clocktext;
 
@@ -125,7 +127,7 @@
 
 			// ###### STUFFF FOR TRANSITIONS###########
 			var div_list = [document.getElementById("item1"), document.getElementById("item2"), document.getElementById("item3"), document.getElementById("item4"), document.getElementById("item5"), document.getElementById("item6"), document.getElementById("item7")];
-			var timing_list = [19, 12, 22, 18, 22, 8, 22];
+			var timing_list = [19, 10, 22, 18, 22, 8, 22];
 			function clear() {
 		  		for(i=0;i<7;i++){
 					div_list[i].style.display = "none";
