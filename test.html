@@ -157,41 +157,41 @@
 
 			
 
-			// // ###### STUFFF FOR TRANSITIONS###########
-			// var div_list = [document.getElementById("item1"), document.getElementById("item2"), document.getElementById("item3"), document.getElementById("item4"), document.getElementById("item5"), document.getElementById("item6"), document.getElementById("item7")];
-			// var timing_list = [19, 10, 22, 18, 22, 8, 22];
-			// function clear() {
-		 //  		for(i=0;i<7;i++){
-			// 		div_list[i].style.display = "none";
-			// 	}
-			// }
-			// const arrSum = arr => arr.reduce((a,b) => a + b, 0)
-			// second_cutoff = arrSum(timing_list);
-			// if (current_seconds%second_cutoff < arrSum(timing_list.slice(0, 1))) {
-			// 	clear();
-			// 	div_list[0].style.display = "block";
-			// }else if(current_seconds%second_cutoff<arrSum(timing_list.slice(0, 2))){
-			// 	clear();
-			// 	div_list[1].style.display = "block";
-			// }else if(current_seconds%second_cutoff<arrSum(timing_list.slice(0, 3))){
-			// 	clear();
-			// 	div_list[2].style.display = "block";
-			// }else if(current_seconds%second_cutoff<arrSum(timing_list.slice(0, 4))){
-			// 	clear();
-			// 	div_list[3].style.display = "block";
-			// }else if(current_seconds%second_cutoff<arrSum(timing_list.slice(0, 5))){
-			// 	clear();
-			// 	div_list[4].style.display = "block";
-			// }else if(current_seconds%second_cutoff<arrSum(timing_list.slice(0, 6))){
-			// 	clear();
-			// 	div_list[5].style.display = "block";
-			// }else if(current_seconds%second_cutoff<arrSum(timing_list.slice(0, 7))){
-			// 	clear();
-			// 	div_list[6].style.display = "block";
-			// }else {
-			// 	clear();
-			// }
-			// // ###### STUFFF FOR TRANSITIONS###########
+			// ###### STUFFF FOR TRANSITIONS###########
+			var div_list = [document.getElementById("item1"), document.getElementById("item2"), document.getElementById("item3"), document.getElementById("item4"), document.getElementById("item5"), document.getElementById("item6"), document.getElementById("item7")];
+			var timing_list = [19, 10, 22, 18, 22, 8, 22];
+			function clear() {
+		  		for(i=0;i<7;i++){
+					div_list[i].style.display = "none";
+				}
+			}
+			const arrSum = arr => arr.reduce((a,b) => a + b, 0)
+			second_cutoff = arrSum(timing_list);
+			if (current_seconds%second_cutoff < arrSum(timing_list.slice(0, 1))) {
+				clear();
+				div_list[0].style.display = "block";
+			}else if(current_seconds%second_cutoff<arrSum(timing_list.slice(0, 2))){
+				clear();
+				div_list[1].style.display = "block";
+			}else if(current_seconds%second_cutoff<arrSum(timing_list.slice(0, 3))){
+				clear();
+				div_list[2].style.display = "block";
+			}else if(current_seconds%second_cutoff<arrSum(timing_list.slice(0, 4))){
+				clear();
+				div_list[3].style.display = "block";
+			}else if(current_seconds%second_cutoff<arrSum(timing_list.slice(0, 5))){
+				clear();
+				div_list[4].style.display = "block";
+			}else if(current_seconds%second_cutoff<arrSum(timing_list.slice(0, 6))){
+				clear();
+				div_list[5].style.display = "block";
+			}else if(current_seconds%second_cutoff<arrSum(timing_list.slice(0, 7))){
+				clear();
+				div_list[6].style.display = "block";
+			}else {
+				clear();
+			}
+			// ###### STUFFF FOR TRANSITIONS###########
 		}
 
 		GetClock();
