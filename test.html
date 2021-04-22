@@ -120,7 +120,7 @@
 			var carbon_budget = 281688835843 - (difference * 1331)
 			// var debug = String(nmonth) +","+ String(ndate) +","+ String(nhour) +","+ String(nmin) +","+ String(nsec)
 
-			var clocktext=String(carbon_budget) + "<div style=\"font-size: 40px\"> TONNES OF CO2 </div>";
+			var clocktext=carbon_budget.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "<div style=\"font-size: 40px\"> TONNES OF CO2 </div>";
 			// var clocktext=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
 			document.getElementById('item3').innerHTML=clocktext;
 
