@@ -131,7 +131,7 @@
 			var second_standard2 = 4*30*24*60*60 	+ 22 * 24*60*60		+ 1 * 60*60	+ 42 *60 + 0;
 			var difference2 = current_seconds - second_standard2;
 			var lifeline=String((12.2423303 + (difference2*.0000000203909)).toFixed(9)) + "%";
-			document.getElementById('item5').innerHTML=lifeline;
+			document.getElementById('item7').innerHTML=lifeline;
 
 
 			// DEADLINE
@@ -155,7 +155,7 @@
 			time_left = time_left - s*(1);
 			var clocktext=String(y)+"<a style=\"font-size: 30px\">YRS</a>"+String(d)+"<a style=\"font-size: 30px\">DAYS</a>"+String(h)+":"+String(m)+":"+String(s);
 			// var debug = String(nyear) +","+String(nmonth) +","+ String(ndate) +","+ String(nhour) +","+ String(nmin) +","+ String(nsec)
-			document.getElementById('item7').innerHTML=clocktext;
+			document.getElementById('item5').innerHTML=clocktext;
 
 			
 
