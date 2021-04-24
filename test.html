@@ -65,18 +65,6 @@
 
     <div class="row red" id="item3" style="font-size: 70px; padding-top: 30px"></div>
 
-    <div class="row green" id="item4" style="overflow: hidden">
-      <div class="scroll">
-        LIFELINE: % OF WORLD'S ENERGY FROM RENEWABLES: &nbsp;&nbsp;&nbsp;  LIFELINE: % OF WORLD'S ENERGY FROM RENEWABLES:
-      </div>
-    </div>
-
-    <!-- <script src="./TestingJenning/widget-lifeline.js" async></script>
-    <div id="item5">
-      <climate-clock-lifeline />
-    </div> -->
-    <div class="row green" id="item5" style="font-size: 80px;"></div> 
-
     <script src="./TestingJenning/widget-deadline.js" async></script>
     <div class="row red" id="item6" style="overflow: hidden">
       <div class="scrollDeadline">
@@ -88,6 +76,20 @@
 		<climate-clock-deadline />
 	</div> -->
 	<div class="row red" id="item7" style="font-size: 75px;"></div> 
+
+
+	<div class="row green" id="item4" style="overflow: hidden">
+      <div class="scroll">
+        LIFELINE: % OF WORLD'S ENERGY FROM RENEWABLES: &nbsp;&nbsp;&nbsp;  LIFELINE: % OF WORLD'S ENERGY FROM RENEWABLES:
+      </div>
+    </div>
+
+    <!-- <script src="./TestingJenning/widget-lifeline.js" async></script>
+    <div id="item5">
+      <climate-clock-lifeline />
+    </div> -->
+    <div class="row green" id="item5" style="font-size: 80px;"></div> 
+	
 
 		<br><br>
 		<!-- <div style="color: white;" id="clockbox"></div> -->
@@ -157,7 +159,7 @@
 
 			
 
-			// ###### STUFFF FOR TRANSITIONS###########
+			// ############## STUFFF FOR TRANSITIONS ###########
 			var div_list = [document.getElementById("item1"), document.getElementById("item2"), document.getElementById("item3"), document.getElementById("item4"), document.getElementById("item5"), document.getElementById("item6"), document.getElementById("item7")];
 			var timing_list = [19, 10, 22, 18, 22, 8, 22];
 			function clear() {
@@ -191,7 +193,8 @@
 			}else {
 				clear();
 			}
-			// ###### STUFFF FOR TRANSITIONS###########
+			// ############# STUFFF FOR TRANSITIONS ###########
+
 		}
 
 		GetClock();
