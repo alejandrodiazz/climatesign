@@ -53,13 +53,13 @@
 	<body>
     <div class="row green" id="item1" style="overflow: hidden">
       <div class="scroll" >
-        GOAL: LIMIT GLOBAL TEMPERATURE RISE TO 1.5&deg;C (2.7&deg;F)  &nbsp;&nbsp;&nbsp; GOAL: LIMIT GLOBAL TEMPERATURE RISE TO 1.5&deg;C (2.7&deg;F)
+          &nbsp; &nbsp; GOAL: LIMIT GLOBAL TEMPERATURE RISE TO 1.5&deg;C (2.7&deg;F)
       </div>
     </div>
 
     <div class="row red" id="item2" style="overflow: hidden">
       <div class="scroll">
-        CO2 EMISSIONS BUDGET: &nbsp;&nbsp;&nbsp;&nbsp; CO2 EMISSIONS BUDGET:
+          &nbsp; CO2 EMISSIONS BUDGET:
       </div>
     </div>
 
@@ -68,7 +68,7 @@
     <script src="./TestingJenning/widget-deadline.js" async></script>
     <div class="row red" id="item6" style="overflow: hidden">
       <div class="scrollDeadline">
-        DEADLINE: ZERO EMISSIONS BY:
+          &nbsp; DEADLINE: ZERO EMISSIONS BY:
       </div>
     </div>
 
@@ -78,9 +78,9 @@
 	<div class="row red" id="item7" style="font-size: 75px;"></div> 
 
 
-	<div class="row green" id="item4" style="overflow: hidden">
+    <div class="row green" id="item4" style="overflow: hidden">
       <div class="scroll">
-        LIFELINE: % OF WORLD'S ENERGY FROM RENEWABLES: &nbsp;&nbsp;&nbsp;  LIFELINE: % OF WORLD'S ENERGY FROM RENEWABLES:
+          &nbsp; LIFELINE: % OF WORLD'S ENERGY FROM RENEWABLES:
       </div>
     </div>
 
@@ -161,7 +161,8 @@
 
 			// ############## STUFFF FOR TRANSITIONS ###########
 			var div_list = [document.getElementById("item1"), document.getElementById("item2"), document.getElementById("item3"), document.getElementById("item4"), document.getElementById("item5"), document.getElementById("item6"), document.getElementById("item7")];
-			var timing_list = [19, 10, 22, 18, 22, 8, 22];
+			//var timing_list = [19, 10, 22, 18, 22, 8, 22];
+            var timing_list = [18, 8, 12, 15, 12, 8, 12];
 			function clear() {
 		  		for(i=0;i<7;i++){
 					div_list[i].style.display = "none";
