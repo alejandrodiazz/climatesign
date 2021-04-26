@@ -119,7 +119,7 @@
 			var current_seconds = (nmonth+1)*30*24*60*60+ ndate *24*60*60	+  nhour*60*60 	+ nmin *60 + nsec
 			var difference = current_seconds - second_standard
 
-			var carbon_budget = 281688835843 - (difference * 1331)
+			var carbon_budget = 281631406619 - (difference * 1331)
 			// var debug = String(nmonth) +","+ String(ndate) +","+ String(nhour) +","+ String(nmin) +","+ String(nsec)
 
 			var clocktext=carbon_budget.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "<div style=\"font-size: 40px\"> TONNES OF CO2 </div>";
