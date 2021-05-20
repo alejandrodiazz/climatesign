@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en" class="is-desktop">
+	<head>
+    <style>
+      @font-face { 
+        font-family: "KatwijkMono"; 
+        src: url('./KatwijkMono-Black.otf');
+      }
+
+      @keyframes floatText {
+        to {
+          transform: translateX(-280%);
+        }
+      }
+    
+      body {
+        background-color: black;
+        width: 1000px;
+      }
+
+      .row {
+        font-family: "KatwijkMono";
+        color: white;
+        text-align: center;
+        padding-top: 40px;
+        padding-bottom: 30px;
+        font-size: 90px;
+        box-sizing: border-box;
+        height: 500px;
+      }
+
+      .green {
+        background-color: #009a59;
+      }
+
+      .red {
+        background-color: red;
+      }
+
+      #warningGraph {
+        width: 1000px;
+        margin: auto;
+      }
+
+      .title {
+        font-size: 100px;
+      }
+    </style>
+	</head>
+
+	<body>
+    <div class="row green" id="item1">
+        <div class="title">
+          GOAL:
+        </div>
+        LIMIT GLOBAL TEMPERATURE RISE TO 1.5&deg;C (2.7&deg;F)
+    </div>
+
+    <div class="row red" id="item3"></div>
+
+    <script src="./TestingJenning/widget-deadline.js" async></script>
+
+    <!-- <div id="item7">
+		<climate-clock-deadline />
+	</div> -->
+	<div class="row red" id="item5" style="font-size: 75px;"></div> 
+
+
+    <!-- <script src="./TestingJenning/widget-lifeline.js" async></script>
+    <div id="item5">
+      <climate-clock-lifeline />
+    </div> -->
+    <div class="row green" id="item7" style="font-size: 80px;"></div> 
+	
+    <!-- world scientists' warning to humanity graph -->
+    <div style="text-align: center;">
+      <img src="./warnings to humanity/tempchange.png" id="warningGraph"/>
+    </div>
+
+		<!-- Saturday April 17th 8:31pm
+		C02 budget left: 281,688,835,843
+		Rate: 1,331 tonnes/sec  -->
+		<script type="text/javascript">
+		var tday=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+		var tmonth=["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+		function GetClock(){
+			var d=new Date();
+			var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getFullYear();
+			var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
+
+			if(nhour==0){ap=" AM";nhour=12;}
+			else if(nhour<12){ap=" AM";}
+			else if(nhour==12){ap=" PM";}
+			else if(nhour>12){ap=" PM";nhour-=12;}
+
+			// if(nmin<=9) nmin="0"+nmin;
+			// if(nsec<=9) nsec="0"+nsec;
+
+			var second_standard = 4*30*24*60*60 	+ 17 * 24*60*60		+ 20 * 60*60	+ 31 *60 	+ 0
+			var current_seconds = (nmonth+1)*30*24*60*60+ ndate *24*60*60	+  nhour*60*60 	+ nmin *60 + nsec
+			var difference = current_seconds - second_standard
+
+			var carbon_budget = 281631406619 - (difference * 1331)
+			// var debug = String(nmonth) +","+ String(ndate) +","+ String(nhour) +","+ String(nmin) +","+ String(nsec)
+
+			var clocktext=carbon_budget.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "<div style=\"font-size: 40px\"> TONNES OF CO2 </div>";
+			// var clocktext=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
+			document.getElementById('item3').innerHTML=`<div class="title">CO2 EMISSIONS BUDGET:</div> <div class="title">` + clocktext + "</div>";
+
+			// LIFELINE
+			// bassed off of thursday April 22nd 1:43:00am
+			var second_standard2 = 4*30*24*60*60 	+ 22 * 24*60*60		+ 1 * 60*60	+ 42 *60 + 0;
+			var difference2 = current_seconds - second_standard2;
+			var lifeline=String((12.2423303 + (difference2*.0000000203909)).toFixed(9)) + "%";
+			document.getElementById('item7').innerHTML=
+      `<div class="title">
+        LIFELINE:
+      </div>
+        % OF WORLD'S ENERGY FROM RENEWABLES <br/> <div class="title">` + lifeline + "</div>";
+
+
+			// DEADLINE
+			// bassed off of thursday April 22nd 1:54:00am
+			var second_standard3 = 4*30*24*60*60 	+ 22 * 24*60*60		+ 2 * 60*60	+ 15 *60 + 0;
+			var difference3 = current_seconds - second_standard3;
+			var deadline = 6*12*30*24*60*60 +  8*30*24*60*60 	+ 14 * 24*60*60		+ 5 * 60*60	+ 45 *60 + 0;
+			var time_left = deadline - difference3;
+			var y = Math.trunc(time_left/(12*30*24*60*60));
+			time_left = time_left - y*(12*30*24*60*60);
+			var d = Math.trunc(time_left/(24*60*60));
+			time_left = time_left - d*(24*60*60);
+			var h = Math.trunc(time_left/(60*60));
+			if(h<10){h = "0" + String(h);}
+			time_left = time_left - h*(60*60);
+			var m = Math.trunc(time_left/(60));
+			if(m<10){m = "0" + String(m);}
+			time_left = time_left - m*(60);
+			var s = Math.trunc(time_left/(1));
+			if(s<10){s = "0" + String(s);}
+			time_left = time_left - s*(1);
+			var clocktext=String(y)+"<a style=\"font-size: 30px\">YRS</a>"+String(d)+"<a style=\"font-size: 30px\">DAYS</a>"+String(h)+":"+String(m)+":"+String(s);
+			// var debug = String(nyear) +","+String(nmonth) +","+ String(ndate) +","+ String(nhour) +","+ String(nmin) +","+ String(nsec)
+			document.getElementById('item5').innerHTML=
+      `<div class="title">
+        DEADLINE:
+      </div>
+      ZERO EMISSIONS BY <br/> <div class="title">` + clocktext + "</div>";
+
+			
+
+			// ############## STUFFF FOR TRANSITIONS ###########
+			var div_list = [document.getElementById("item1"), document.getElementById("item3"), document.getElementById("item5"), document.getElementById("item7")];
+			//var timing_list = [19, 10, 22, 18, 22, 8, 22];
+            var timing_list = [18, 12, 12, 12];
+			function clear() {
+		  		for(i=0;i<4;i++){
+					div_list[i].style.display = "none";
+				}
+			}
+			const arrSum = arr => arr.reduce((a,b) => a + b, 0)
+			second_cutoff = arrSum(timing_list);
+			if (current_seconds%second_cutoff < arrSum(timing_list.slice(0, 1))) {
+				clear();
+				div_list[0].style.display = "block";
+			}else if(current_seconds%second_cutoff<arrSum(timing_list.slice(0, 2))){
+				clear();
+				div_list[1].style.display = "block";
+			}else if(current_seconds%second_cutoff<arrSum(timing_list.slice(0, 3))){
+				clear();
+				div_list[2].style.display = "block";
+			}else if(current_seconds%second_cutoff<arrSum(timing_list.slice(0, 4))){
+				clear();
+				div_list[3].style.display = "block";
+			}else {
+				clear();
+			}
+			// ############# STUFFF FOR TRANSITIONS ###########
+
+		}
+
+		GetClock();
+		setInterval(GetClock,1000);
+
+
+		// Hiding and not hiding divs
+		
+		</script>
+
+	</body>
+
+</html>
