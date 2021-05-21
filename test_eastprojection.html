@@ -27,7 +27,7 @@
         padding-bottom: 30px;
         font-size: 90px;
         box-sizing: border-box;
-        height: 500px;
+        height: 550px;
       }
 
       .green {
@@ -46,37 +46,47 @@
       .title {
         font-size: 100px;
       }
+
+      .renewableTitle {
+        font-size: 90px;
+      }
     </style>
 	</head>
 
 	<body>
-    <div class="row green" id="item1">
+    <div id="item1">
+      <div class="row green">
         <div class="title">
           GOAL:
         </div>
         LIMIT GLOBAL TEMPERATURE RISE TO 1.5&deg;C (2.7&deg;F)
     </div>
+      <div style="text-align: center;">
+        <img src="./warnings to humanity/tempchange.png" id="warningGraph"/>
+      </div>
+    </div>
 
-    <div class="row red" id="item3"></div>
+    <div id="item3">
+    </div>
 
     <script src="./TestingJenning/widget-deadline.js" async></script>
 
     <!-- <div id="item7">
 		<climate-clock-deadline />
 	</div> -->
-	<div class="row red" id="item5" style="font-size: 75px;"></div> 
+	<div id="item5" style="font-size: 75px;"></div> 
 
 
     <!-- <script src="./TestingJenning/widget-lifeline.js" async></script>
     <div id="item5">
       <climate-clock-lifeline />
     </div> -->
-    <div class="row green" id="item7" style="font-size: 80px;"></div> 
+    <div id="item7" style="font-size: 70px;"></div> 
 	
     <!-- world scientists' warning to humanity graph -->
-    <div style="text-align: center;">
+    <!-- <div style="text-align: center;">
       <img src="./warnings to humanity/tempchange.png" id="warningGraph"/>
-    </div>
+    </div> -->
 
 		<!-- Saturday April 17th 8:31pm
 		C02 budget left: 281,688,835,843
@@ -107,7 +117,13 @@
 
 			var clocktext=carbon_budget.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "<div style=\"font-size: 40px\"> TONNES OF CO2 </div>";
 			// var clocktext=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
-			document.getElementById('item3').innerHTML=`<div class="title">CO2 EMISSIONS BUDGET:</div> <div class="title">` + clocktext + "</div>";
+			document.getElementById('item3').innerHTML=
+      `<div class="row red" id="item3">
+          <div class="title">CO2 EMISSIONS BUDGET:</div>
+          <div class="title">` + clocktext + "</div></div>" +
+        `<div style="text-align: center;">
+          <img src="./warnings to humanity/carbonemchange.png" id="warningGraph"/>
+        </div>`;
 
 			// LIFELINE
 			// bassed off of thursday April 22nd 1:43:00am
@@ -115,10 +131,16 @@
 			var difference2 = current_seconds - second_standard2;
 			var lifeline=String((12.2423303 + (difference2*.0000000203909)).toFixed(9)) + "%";
 			document.getElementById('item7').innerHTML=
-      `<div class="title">
-        LIFELINE:
-      </div>
-        % OF WORLD'S ENERGY FROM RENEWABLES <br/> <div class="title">` + lifeline + "</div>";
+      `<div  class="row green" >
+        <div class="renewableTitle">
+          LIFELINE:
+        </div>
+        % OF WORLD'S ENERGY FROM RENEWABLES <br/>
+        <div class="title">` + lifeline + "</div>"+
+        "</div>" +
+        `<div style="text-align: center;">
+        <img src="./warnings to humanity/renewableenergychange.png" id="warningGraph"/>
+        </div>`;
 
 
 			// DEADLINE
@@ -143,10 +165,13 @@
 			var clocktext=String(y)+"<a style=\"font-size: 30px\">YRS</a>"+String(d)+"<a style=\"font-size: 30px\">DAYS</a>"+String(h)+":"+String(m)+":"+String(s);
 			// var debug = String(nyear) +","+String(nmonth) +","+ String(ndate) +","+ String(nhour) +","+ String(nmin) +","+ String(nsec)
 			document.getElementById('item5').innerHTML=
-      `<div class="title">
+      `<div class="row red" ><div class="title">
         DEADLINE:
       </div>
-      ZERO EMISSIONS BY <br/> <div class="title">` + clocktext + "</div>";
+      ZERO EMISSIONS BY <br/> <div class="title">` + clocktext + "</div></div>" +
+      `<div style="text-align: center;">
+        <img src="./warnings to humanity/carbonemchange.png" id="warningGraph"/>
+      </div>`;
 
 			
 
