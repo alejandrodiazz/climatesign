@@ -1,5 +1,11 @@
 # climatesign
-HTML Pages to display on MIT Building for Climate Action
+Hello! Welcome to our Climate Clock Repository!
+
+The main file we use for creating the numbers and figures we project is "test.html". "index.html is the website content we host on https://web.mit.edu/climateclock/ 
+Most of the other files are ideas or are a part of tests we've done.
+
+If you have any questions email us at climateclock@mit.edu
+
 # How to build the CLIMATECLOCK widget yourself
 
 ### Install prerequisites
