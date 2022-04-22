@@ -6,7 +6,7 @@ Most of the other files are ideas or are a part of tests we've done.
 
 "twobanner_static_dynamic.html" was made from test.html to display two banners simultaneously on the harvard Lehman Hall building
 
-If you have any questions email us at climateclock@mit.edu
+If you have any questions please email us at climateclock@mit.edu
 
 # How to build the CLIMATECLOCK widget yourself
 
