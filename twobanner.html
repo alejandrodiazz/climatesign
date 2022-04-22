@@ -142,13 +142,13 @@
 			// if(nmin<=9) nmin="0"+nmin;
 			// if(nsec<=9) nsec="0"+nsec;
 
-			var second_standard = nyear*12*30*24*60*60  + 10*30*24*60*60 	+ 0 * 24*60*60		+ 23 * 60*60	+ 44 *60 	+ 26
-			//var current_seconds = (nmonth+1)*30*24*60*60+ ndate *24*60*60	+  nhour*60*60 	+ nmin *60 + nsec 
-			var current_seconds = nyear*12*30*24*60*60  + (nmonth)*30*24*60*60+ (ndate-1) *24*60*60	+  nhour*60*60 	+ nmin *60 + nsec  //will be off by a day in 2022, due to dec 31st
-			var difference = current_seconds - second_standard
+			var second_standard = 2022*12*30*24*60*60  + 3*30*24*60*60  + 22 * 24*60*60    + 12 * 60*60  + 27 *60  + 50 //corrected 4/22/2022 12:27:50
+      //var current_seconds = (nmonth+1)*30*24*60*60+ ndate *24*60*60 +  nhour*60*60  + nmin *60 + nsec
+      var current_seconds = nyear*12*30*24*60*60  + (nmonth)*30*24*60*60+ (ndate) *24*60*60 +  nhour*60*60  + nmin *60 + nsec
+      var difference = current_seconds - second_standard
 
+      var carbon_budget = 305949055885 - (difference * 1337)  //corrected 4/22/2022 12:27:50
 			
-			var carbon_budget = 325767185553 - (difference * 1337)  //corrected for 11/1/2021 11:44:26PM
 			//var carbon_budget = 281631406619 - (difference * 1331)  /April 17th
 			// var debug = String(nmonth) +","+ String(ndate) +","+ String(nhour) +","+ String(nmin) +","+ String(nsec)
 
