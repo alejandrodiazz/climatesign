@@ -244,7 +244,7 @@ class="nav-link2 w-nav-link">Acknowledgements</a></nav>
 //      var lifeline=String((12.2423303 + (difference2*.0000000203909)).toFixed(9)) + "%";  //5.655%/yr
 //      var lifeline=String((12.55 + (difference2*.000000055912)).toFixed(9)) + "%";
 //updated for April 22, 2022!!			
-      var lifeline=String((12.541734 + (difference2*.00000003501617)).toFixed(9)) + "%";  // 1.10427%/year
+      var lifeline=String((12.541734 + 0.552 + (difference2*.00000003501617)).toFixed(9)) + "%"; // half-year plus 1.10427%/year
 
       document.getElementById('item7').innerHTML=lifeline;
 
@@ -616,7 +616,7 @@ class="nav-link2 w-nav-link">Acknowledgements</a></nav>
     2019 renewable energy / total = 11.43746%<br />
     </div>
 
-    <p>For our projection, we begin at 12.541734% at the end of 2020, and approximate 
+    <p>For our projection, we begin at 12.541734% at the middle of 2020, and approximate 
     the increase of renewables based on 3.501617*10^-8 %/sec, which comes from 
     (12.541734%-11.43746%)/(365*24*3600s).  If nuclear were included as a low-carbon 
     source, the lifeline would be roughly 4.24% higher.</p>
