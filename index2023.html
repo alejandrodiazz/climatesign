@@ -150,8 +150,225 @@
     .tableBorder tr{
 		border: 1px solid black;
 	}
-  
-		
+
+	 /* Style the button that is used to open and close the collapsible content */
+	.collapsible {
+	  background-color: #eee;
+	  color: #444;
+	  cursor: pointer;
+	  padding: 18px;
+	  width: 100%;
+	  border: none;
+	  text-align: left;
+	  outline: none;
+	  font-size: 15px;
+	}
+
+	/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+	.active, .collapsible:hover {
+	  background-color: #ccc;
+	}
+
+	/* Style the collapsible content. Note: hidden by default */
+	.content {
+	  padding: 0 18px;
+	  display: none;
+	  overflow: hidden;
+	  background-color: #f1f1f1;
+	} 
+	 .collapsible:after {
+	  content: '\02795'; /* Unicode character for "plus" sign (+) */
+	  font-size: 13px;
+	  color: white;
+	  float: right;
+	  margin-left: 5px;
+	}
+
+	.active:after {
+	  content: "\2796"; /* Unicode character for "minus" sign (-) */
+	}
+
+/* slideshow */
+
+* {box-sizing:border-box}
+
+	/* Slideshow container */
+	.slideshow-container {
+	  max-width: 1000px;
+	  position: relative;
+	  margin: auto;
+	}
+
+	/* Hide the images by default */
+	.mySlides {
+	  display: none;
+	}
+
+	/* Next & previous buttons */
+	.prev, .next {
+	  cursor: pointer;
+	  position: absolute;
+	  top: 50%;
+	  width: auto;
+	  margin-top: -22px;
+	  padding: 16px;
+	  color: white;
+	  font-weight: bold;
+	  font-size: 18px;
+	  transition: 0.6s ease;
+	  border-radius: 0 3px 3px 0;
+	  user-select: none;
+	}
+
+	/* Position the "next button" to the right */
+	.next {
+	  right: 0;
+	  border-radius: 3px 0 0 3px;
+	}
+
+	/* On hover, add a black background color with a little bit see-through */
+	.prev:hover, .next:hover {
+	  background-color: rgba(0,0,0,0.8);
+	}
+
+	/* Caption text */
+	.text {
+	  color: #f2f2f2;
+	  font-size: 15px;
+	  padding: 8px 12px;
+	  position: absolute;
+	  bottom: 8px;
+	  width: 100%;
+	  text-align: center;
+	}
+
+	/* Number text (1/3 etc) */
+	.numbertext {
+	  color: #f2f2f2;
+	  font-size: 12px;
+	  padding: 8px 12px;
+	  position: absolute;
+	  top: 0;
+	}
+
+	/* The dots/bullets/indicators */
+	.dot {
+	  cursor: pointer;
+	  height: 15px;
+	  width: 15px;
+	  margin: 0 2px;
+	  background-color: #bbb;
+	  border-radius: 50%;
+	  display: inline-block;
+	  transition: background-color 0.6s ease;
+	}
+
+	.active, .dot:hover {
+	  background-color: #717171;
+	}
+
+	/* Fading animation */
+	.fade {
+	  animation-name: fade;
+	  animation-duration: 1.5s;
+	}
+
+	@keyframes fade {
+	  from {opacity: .4}
+	  to {opacity: 1}
+	}
+<!-- END SLIDESHOW -->
+
+<!-- Slideshow gallery -->
+
+<!--
+* {
+  box-sizing: border-box;
+}
+-->
+/* Position the image container (needed to position the left and right arrows) */
+.sgcontainer {
+  position: relative;
+}
+
+/* Hide the images by default */
+.sgmySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.sgcursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.sgprev,
+.sgnext {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.sgnext {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.sgprev:hover,
+.sgnext:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.sgnumbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.sgcaption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.sgrow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.sgcolumn {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.sgdemo {
+  opacity: 0.6;
+}
+
+.sgactive,
+.sgdemo:hover {
+  opacity: 1;
+}
+
     </style>
 		
 		
@@ -166,8 +383,7 @@ data-no-scroll="1" class="left-navigation w-nav"><a
 href="#clock" class="logo-link2 w-nav-brand"><h1 class="brand-text">MIT Climate Clock</h1></a><nav 
 role="navigation" class="nav-menu w-nav-menu"><a href="#motivation" 
 class="nav-link2 w-nav-link">Motivation</a><a href="#messages" 
-class="nav-link2 w-nav-link">Latest Message</a><a href="#projections" 
-class="nav-link2 w-nav-link">Prior Messages</a><a href="#solutions" 
+class="nav-link2 w-nav-link">Messages</a><a href="#solutions" 
 class="nav-link2 w-nav-link">Solutions</a><a href="#world" 
 class="nav-link2 w-nav-link">The World</a><a href="#team" 
 class="nav-link2 w-nav-link">Team</a><a href="#contact" 
@@ -200,7 +416,148 @@ class="nav-link2 w-nav-link">Net-Zero Meter</a>-->
 <img src="https://assets.website-files.com/5531240438615e9e376d4489/54e77bf6942b09583a0ebbca_social-30-white.svg" width="17" alt=""/></a></div>
 -->
 
-<div><!-- class="content">-->
+ <!-- Slideshow container -->
+<div id="clock" class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="currentMessageSlides fade">
+    <div class="numbertext">1 / 12</div>
+    <img src="ccimg\1.png" style="width:100%">
+    <!--<div class="text">Caption Text</div>-->
+  </div>
+
+  <div class="currentMessageSlides fade">
+    <div class="numbertext">2 / 12</div>
+    <img src="ccimg\2.png" style="width:100%">
+    <!--<div class="text">Caption Two</div>-->
+  </div>
+
+  <div class="currentMessageSlides fade">
+    <div class="numbertext">3 / 12</div>
+    <img src="ccimg\3.png" style="width:100%">
+    <!--<div class="text">Caption Three</div>-->
+  </div>
+
+
+  <div class="currentMessageSlides fade">
+    <div class="numbertext">4 / 12</div>
+    <img src="ccimg\4.png" style="width:100%">
+    <!--<div class="text">Caption Three</div>-->
+  </div>
+  
+  <div class="currentMessageSlides fade">
+    <div class="numbertext">5 / 12</div>
+    <img src="ccimg\5.png" style="width:100%">
+    <!--<div class="text">Caption Three</div>-->
+  </div>
+  
+  <div class="currentMessageSlides fade">
+    <div class="numbertext">6 / 12</div>
+    <img src="ccimg\6.png" style="width:100%">
+    <!--<div class="text">Caption Three</div>-->
+  </div>
+  
+  <div class="currentMessageSlides fade">
+    <div class="numbertext">7 / 12</div>
+    <img src="ccimg\7.png" style="width:100%">
+    <!--<div class="text">Caption Three</div>-->
+  </div>
+  <div class="currentMessageSlides fade">
+    <div class="numbertext">8 / 12</div>
+    <img src="ccimg\8.png" style="width:100%">
+    <!--<div class="text">Caption Three</div>-->
+  </div>
+  <div class="currentMessageSlides fade">
+    <div class="numbertext">9 / 12</div>
+    <img src="ccimg\9.png" style="width:100%">
+    <!--<div class="text">Caption Three</div>-->
+  </div>
+  <div class="currentMessageSlides fade">
+    <div class="numbertext">10 / 12</div>
+    <img src="ccimg\10.png" style="width:100%">
+    <!--<div class="text">Caption Three</div>-->
+  </div>
+  <div class="currentMessageSlides fade">
+    <div class="numbertext">11 / 12</div>
+    <img src="ccimg\11.png" style="width:100%">
+    <!--<div class="text">Caption Three</div>-->
+  </div>
+  <div class="currentMessageSlides fade">
+    <div class="numbertext">12 / 12</div>
+    <img src="ccimg\12.png" style="width:100%">
+    <!--<div class="text">Caption Three</div>-->
+  </div>
+
+  <!-- Next and previous buttons -->
+<!--  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  -->
+</div>
+<br>
+
+<!-- The dots/circles -->
+
+<!--
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div> 
+-->
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("currentMessageSlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+} 
+</script>
+
+
+<!--
+<script>
+ let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+-->
+
+<hr /><br /><br />
+
+<div>
 
   <!-- <div><img src="ccimg/events.PNG" alt="Earth Day April 22 7-9pm Climate Clock events at Eastman Court MIT and Leahman Hall Harvard" /></div>	 -->
   <div class="hero-title-wrapper">
@@ -388,7 +745,120 @@ var x = document.getElementById(ii);
 
 <section id="messages" class="section section-gray">
   <div class="section-title-group">
-		<h2 class="section-heading centered">Current Messages</h2>
+		<h2 class="section-heading centered">Messages</h2>
+    <div class="section-subheading center"></div>
+  </div>
+  
+  <!-- IMAGE GALLERY IN PROGRESS!!!!!
+  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+<div class="sgcontainer">
+
+  <div class="sgmySlides">
+    <div class="sgnumbertext">1 / 6</div>
+      <img src="ccimg\1.png" style="width:100%">
+  </div>
+
+  <div class="sgmySlides">
+    <div class="sgnumbertext">2 / 6</div>
+      <img src="ccimg\nzmeter_percent.png" alt="Net Zero Meter Earth Week April 2023 15% Progress" style="width:100%">
+  </div>
+
+  <div class="sgmySlides">
+    <div class="sgnumbertext">3 / 6</div>
+      <img src="ccimg\1.png" style="width:100%">
+  </div>
+
+  <div class="sgmySlides">
+    <div class="sgnumbertext">4 / 6</div>
+      <img src="ccimg/Harvard_20220422clock_zoomed.jpg" style="width:100%">
+  </div>
+
+  <div class="sgmySlides">
+    <div class="sgnumbertext">5 / 6</div>
+      <img src="ccimg/MIT_0422_enroads.jpg" style="width:100%">
+  </div>
+
+  <div class="sgmySlides">
+    <div class="sgnumbertext">6 / 6</div>
+      <img src="ccimg\D-LabClassTeamPhoto1_ClimateClockLEDBackpack_4-28-22.jpg" style="width:100%">
+  </div>
+
+
+
+  <!-- Next and previous buttons 
+  <a class="sgprev" onclick="plussgSlides(-1)">&#10094;</a>
+  <a class="sgnext" onclick="plussgSlides(1)">&#10095;</a>
+
+  <!-- Image text 
+  <div class="sgcaption-container">
+    <p id="sgcaption">ex caption</p>
+  </div>
+
+  <!-- Thumbnail images 
+  <div class="sgrow">
+    <div class="sgcolumn">
+      <img class="sgdemo sgcursor" src="ccimg/1.png" style="width:100%" onclick="currentsgSlide(1)" alt="Hack the Climate Clock">
+    </div>
+    <div class="sgcolumn">
+      <img class="sgdemo sgcursor"  src="ccimg/nzmeter_percent.png"style="width:100%" onclick="currentsgSlide(2)" alt="MIT Net-Zero Meter">
+    </div>
+    <div class="sgcolumn">
+      <img class="sgdemo sgcursor" src="ccimg/1.png" style="width:100%" onclick="currentsgSlide(3)" alt="First Four MIT Climate Clocks">
+    </div>
+    <div class="sgcolumn">
+      <img class="sgdemo sgcursor" src="ccimg/Harvard_20220422clock_zoomed.jpg" style="width:100%" onclick="currentsgSlide(4)" alt="Harvard Climate Clock">
+    </div>
+    <div class="sgcolumn">
+      <img class="sgdemo sgcursor" src="ccimg/MIT_0422_enroads.jpg" style="width:100%" onclick="currentsgSlide(5)" alt="Climate Interactive En-ROADS">
+    </div>
+    <div class="sgcolumn">
+      <img class="sgdemo sgcursor" src="ccimg/D-LabClassTeamPhoto1_ClimateClockLEDBackpack_4-28-22.jpg" style="width:100%" onclick="currentsgSlide(6)" alt="Climate Clock Backpacks">
+    </div>
+  </div>
+</div> 
+  
+  <script>
+   let sgslideIndex = 1;
+showsgSlides(sgslideIndex);
+
+// Next/previous controls
+function plussgSlides(n) {
+  showsgSlides(sgslideIndex += n);
+}
+
+// Thumbnail image controls
+function currentsgSlide(n) {
+  showsgSlides(sgslideIndex = n);
+}
+
+function showsgSlides(n) {
+  let i;
+  let sgslides = document.getElementsByClassName("sgmySlides");
+  let dots = document.getElementsByClassName("sgdemo");
+  let captionText = document.getElementById("sgcaption");
+  if (n > sgslides.length) {sgslideIndex = 1}
+  if (n < 1) {sgslideIndex = sgslides.length}
+  for (i = 0; i < sgslides.length; i++) {
+    sgslides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" sgactive", "");
+  }
+  sgslides[sgslideIndex-1].style.display = "block";
+  dots[sgslideIndex-1].className += " sgactive";
+  captionText.innerHTML = dots[sgslideIndex-1].alt;
+} 
+</script>
+
+REMEMBER the internal comments here aren't complete!-->
+  <br /><br />
+  
+<!-- START COLLAPSIBLE CONTENT -->
+<button type="button" class="collapsible">Hack the Climate Clock</button>
+<div class="content">
+
+<div class="section-title-group">
     <div class="section-subheading center">November 30<sup>th</sup> - December 12<sup>th</sup>, 2023 Projection</div>
   </div>
 
@@ -409,16 +879,75 @@ Norah Miller and Eleanor Li, selected as "the winner."
 
 
 <p>For details on Norah and Eleanor's Nov/Dec 2023 projection, download: <a href="refFall2023.docx">References and Assumptions</a></p>
+</div>
 
-</section>
+<br /><br />
 
-
-<section id="projections" class="section">
-<div class="w-container">
+<!-- START COLLAPSIBLE CONTENT -->
+<button type="button" class="collapsible">MIT Net-Zero Meter</button>
+<div class="content">
 
   <div class="section-title-group">
-    <h2 class="section-heading centered">Projection History</h2>
-    <div class="section-subheading center">Our Evolution</div>
+		<h2 class="section-heading centered">Spring 2023 Net Zero Meter</h2>
+    <div class="section-subheading center">MIT Progress Towards Net Zero Emissions!</div>
+  </div>
+
+<br /><br />
+<div class="alignC"><img src="ccimg/nzmeter_percent.png" alt="Net Zero Meter Earth Week April 2023 15% Progress" /></div>
+
+<br /><br />
+
+<p>Our MIT D-Lab Climate Clock team came up with the idea of a meter to showcase 
+MIT’s efforts to "eliminate direct emissions by 2050."</p>
+
+<p>- <a target="_blank" href="https://climate.mit.edu/climateaction/fastforward">Fast 
+Forward: MIT's Climate Action Plan for the Decade (2021) p.12</a></p>
+
+<p>Student feedback led us to create two versions of the Net Zero Meter: one 
+showing MIT's net zero commitment as a annual percentage(%), the other in absolute 
+numbers.  Moving beyond "0" to "ECO" is the goal.</p>
+
+<div>
+	<table>
+	<tr>
+		<td>
+			<p>
+			<ul>
+			  <li>MIT's Climate Goal: Net Zero by 2026. No direct emissions by 2050</li>
+			  <li>UN Sec. General urges developed countries reach Net Zero by 2040</li>
+			  <li>MIT's 2022 emissions were 15% better than 2014 baseline</li>
+			  <li>MIT 2022 Net Zero Meters: CO2-eq Emissions %; CO2-eq Emissions Concentration</li>
+			  <li>MIT emissions are our responsibility!</li>
+			  <li>Net Zero campus emissions safeguards student's and everyone's futures!</li>
+			  <li><a href="https://web.mit.edu/climateclock">https://web.mit.edu/climateclock</a></li>
+			</ul>
+			</p>
+		</td>
+		<td class="imgTable"><div><img src="ccimg/nzmeter_abs.png" alt="Net Zero Meter Earth Week April 2023 181,171mtCO2e/yr" /></div></td>
+	</tr>
+	</table>
+</div>
+
+<p>What does "Net Zero" mean?  According to the Internation Energy Agency (IEA): "Becoming 
+carbon negative requires a company, sector or country 
+to remove more CO2 from the atmosphere than it emits. Meeting ambitious 
+international climate goals may require global CO2 emissions to fall below
+zero in the second half of this century, achieving what is known as net negative 
+emissions."</p>
+
+<br /><br />
+
+</div>
+<br /><br />
+	
+<!-- START COLLAPSIBLE CONTENT -->
+<button type="button" class="collapsible">First Four MIT Climate Clocks</button>
+<div class="content">
+	
+	
+  <div class="section-title-group">
+    <!--<h2 class="section-heading centered"></h2>-->
+    <div class="section-subheading center">2021 and 2022 MIT Projections</div>
   </div>
 	
 	<p>The MIT Climate Clock team originated as a <a target="_blank" 
@@ -512,115 +1041,15 @@ Norah Miller and Eleanor Li, selected as "the winner."
 	Meter." This projection showed MIT's progress and commitment to achieve net 
 	zero greenhouse gas emissions by a 2050 deadline.</p>
 
-
-
-  <h3 class="section-heading centered">Collaboration Beyond MIT</h3>
-  <div class="section-subheading center">Harvard, Climate Interactive, and the Streets of Cambridge</div>
-	<br /><br />
-
-  <p>Beyond MIT, with our partners and team members at Harvard University, we projected the climate 
-  clock in Harvard Square on Lehman Hall for Earth Day events on April 22nd, 2022, and again on Earth Day 2023.</p>
-
-
-  <div class="alignC">
-    <video class="width80" controls>
-      <source src="ccimg/Eshan_MITHarvardBackpack.mp4" type="video/mp4">
-      <!--<source src="movie.ogg" type="video/ogg">-->
-      Your browser does not support the video tag.
-      </video> 
-  </div>
-  <br />
-  <br />
-
-<p>A Harvard Climate Clock came about thanks to a Harvard PhD student, Anita Chandrahas, taking the D-Lab 2022 class and joining
-the MIT Climate Clock team, then bringing a Harvard Climate Clock to Harvard.  She also liaised with a "Great Food Transformation" 
-class at Harvard which inspired a student team in that class to engage with the LED Climate Backpack project.</p>
-
-  <div class="alignC">
-    <video class="width80" controls>
-      <source src="ccimg/Harvard_20220422.mp4" type="video/mp4">
-      <!--<source src="movie.ogg" type="video/ogg">-->
-      Your browser does not support the video tag.
-      </video> 
-  </div>
-  <br />
-  <br />
-  
-  <p>As part of our parallel Earth-Day events at MIT and Harvard, we engaged 
-  people using <a target="_blank" href="https://www.climateinteractive.org/en-roads/">Climate 
-  Interactive's En-ROADS</a> simulator to learn about the climate.  
-  Plant-based ice cream served in compostable dishes was served to showcase 
-  sustainable food solutions.</p> 
-
-	<div class="alignC">
-	<table>
-	  <tr>
-		  <td><div><img src="ccimg/MIT_0422_enroads.jpg" class="height250" alt="En-ROADS at MIT on April 22 2022" /></div></td>
-		  <td><div><img src="ccimg/Harvard_0422screens.jpg" class="height250" alt="En-ROADS and Climate Clock projections at Harvard on April 22 2022" /></div></td>
-		</tr>
-	</table>
-	</div>
-	<div>Photo Credit: Ella Lopez</div>
-
-	
-<!--	<p>Going forward, we will integrate feedback from the community and seek 
-	long-term approval, now that we have successfully demonstrated "proof of concept."</p>
--->
-	
- <br /><br />
-	
-  <h3 class="section-heading centered">Climate Clock LED Backpack</h3>
-  <div class="section-subheading center">Taking the clock on the road</div>
-	<br /><br />
-	
-	<div class="alignC">
-  	<table>
-  	
-  	  <tr>
-  		  <td>
-  			  <div class="alignC">
-          <video class="width80" controls>
-          <source src="ccimg/ClimateClockBackpackOnElectricScooter_ClaireWang_4-28-22.mp4" type="video/mp4">
-          <!--<source src="movie.ogg" type="video/ogg">-->
-          Your browser does not support the video tag.
-          </video><br />
-					Credit: Claire Wang
-          </div>
-  	    </td>
-  		  <td><p>Beyond the big screen, we've gone mobile via backpack!  Gaurav Patekar (MIT'21) 
-  	    conceived of a community awareness project where climate information is displayed 
-  			on an LED backpack.  People can volunteer to borrow the backpack for a week, 
-				sparking conversations about our climate.  Volunteers can then pass the 
-				backpack on to another person to continue the chain of engagement.</p>
-				</td>
-  		</tr>
-  	</table>
-	</div>
-	<br /><br />
-	
-	<div class="alignC">
-  	<table>
-  	  <tr>
-  		  <td><div><img src="ccimg/D-LabClassTeamPhoto1_ClimateClockLEDBackpack_4-28-22.jpg" class="height300" alt="Group showing off Climate LED backpacks" /></div></td>
-  		  <td><div><img src="ccimg/D-LabClassTeamPhoto2_HenriJessica_ClimateClockLEDBackpack_4-28-22.jpg" class="height300" alt="Henri and Jessica with backpacks showing 420ppm CO2 in atm. and climate deadline 7 years 3 months" /></div></td>
-  	  </tr>
-  	</table>
-	</div>
-		
-  </div>
-</section>
-
-
-<section class="section section-gray">
-  <div class="section-title-group">
-		<h2 class="section-heading centered">Prior Messages</h2>
+    <div class="section-title-group">
+		<!--<h2 class="section-heading centered">Prior Messages</h2>-->
     <div class="section-subheading center">What the First Climate Clock Shows</div>
 	</div>
 
 
 
 <!-- CLIMATE CLOCK SCROLLBAR -->
-<div id="clock">
+<div>
 <div class="row green" id="item1" style="overflow: hidden">
       <div class="scroll" >
           &nbsp; &nbsp; GOAL: LIMIT GLOBAL TEMPERATURE RISE TO 1.5&deg;C (2.7&deg;F)
@@ -813,6 +1242,11 @@ class at Harvard which inspired a student team in that class to engage with the 
 	action.</p>
 	
 	
+<!-- START COLLAPSIBLE CONTENT -->
+<button type="button" class="collapsible">Details: Meaning of Each Line</button>
+<div class="content">
+
+
 	<div class="w-row">
   	<div class="column-0-padding w-col w-col-3"><img src="ccimg/goal.png" width="100" alt="" class="grid-image"/>
   	<h3>Goal</h3><p>to limit global temperature increase to 1.5&deg;C  (2.7&deg;F) which is the target 
@@ -866,27 +1300,29 @@ class at Harvard which inspired a student team in that class to engage with the 
   equitable planet for all humans and all life on Earth.</p>
 
 	
-</section>
+</div>   <!-- END COLLAPSIBLE CONTENT -->
 
+<br /><br />
 
-<section id="numbers" class="section section-gray">
-  <div class="section-title-group">
-    <h2 class="section-heading centered">The Numbers</h2>
-    <div class="section-subheading center">Where they come from</div>
-  </div>
+  <div class="section-subheading center">Sources of the Numbers</div>
+  
   <p>Our carbon dioxide budget data is aligned with the latest <a target="_blank" 
   href="https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_Full_Report.pdf">IPCC AR6 2021 report</a>
    (see table SPM.2). The resulting deadline should closely mirror the numbers displayed on the <a 
    target="_blank" href="https://www.mcc-berlin.net/en/research/co2-budget.html">Mercator Institute website</a>
-	 .  Lifeline estimates are the result of counting forward from the middle of 2020 starting from 12.55%, based on 
+	 .  Lifeline global renewable energy sourcing estimates are the result of counting forward from the middle of 2020 starting from 12.55%, based on 
 	 data from the <a target="_blank" href="https://www.bp.com/content/dam/bp/business-sites/en/global/corporate/pdfs/energy-economics/statistical-review/bp-stats-review-2021-full-report.pdf">World Energy 2021 Special Report</a>.
 	 </p>
 	 	 
 	 <br /><br />
+
+<!-- START COLLAPSIBLE -->
+<button type="button" class="collapsible">Details: Carbon Dioxide (CO<sub>2</sub>) and Rewnewable Energy Accounting Guide</button>
+<div class="content">
 		 
-   <div class="section-title-group">
+   <!--<div class="section-title-group">
        <h3 class="section-heading centered">Carbon Dioxide (CO<sub>2</sub>) Accounting Guide</h3>
-   </div>
+   </div>-->
 	 
 	 <p>In order to figure out the time available for action, one can compute a carbon dioxide budget. 
     The budget answers the question "how much carbon dioxide can we put into the atmosphere, 
@@ -1013,61 +1449,146 @@ class at Harvard which inspired a student team in that class to engage with the 
     (12.541734%-11.43746%)/(365*24*3600s).  If nuclear were included as a low-carbon 
     source, the lifeline would be roughly 4.24% higher.</p>
 
+</div>  <!-- END COLLAPSIBLE -->
 
-</section>
 
-
-<section id="nzmeter" class="section section-gray">
-  <div class="section-title-group">
-		<h2 class="section-heading centered">Net Zero Meter</h2>
-    <div class="section-subheading center">MIT Progress Towards Net Zero Emissions!</div>
 </div>
-
 <br /><br />
 
-<div class="alignC"><img src="ccimg/nzmeter_percent.png" alt="Net Zero Meter Earth Week April 2023 15% Progress" /></div>
+<!-- START COLLAPSIBLE CONTENT -->
+<button type="button" class="collapsible">Harvard Climate Clock</button>
+<div class="content">
 
+  <h3 class="section-heading centered">Collaboration Beyond MIT</h3>
+  <div class="section-subheading center">Harvard, Climate Interactive, and the Streets of Cambridge</div>
+	<br /><br />
+
+  <p>Beyond MIT, with our partners and team members at Harvard University, we projected the climate 
+  clock in Harvard Square on Lehman Hall for Earth Day events on April 22nd, 2022, and again on Earth Day 2023.</p>
+
+
+  <div class="alignC">
+    <video class="height250" controls>
+      <source src="ccimg/Eshan_MITHarvardBackpack.mp4" type="video/mp4">
+      <!--<source src="movie.ogg" type="video/ogg">-->
+      Your browser does not support the video tag.
+      </video> 
+  </div>
+  <br />
+  <br />
+
+<p>A Harvard Climate Clock came about thanks to a Harvard PhD student, Anita Chandrahas, taking the D-Lab 2022 class and joining
+the MIT Climate Clock team, then bringing a Harvard Climate Clock to Harvard.  She also liaised with a "Great Food Transformation" 
+class at Harvard which inspired a student team in that class to engage with the LED Climate Backpack project.</p>
+
+  <div class="alignC">
+    <video class="width80" controls>
+      <source src="ccimg/Harvard_20220422.mp4" type="video/mp4">
+      <!--<source src="movie.ogg" type="video/ogg">-->
+      Your browser does not support the video tag.
+      </video> 
+  </div>
+  <br />
+  <br />
+  
+</div>
 <br /><br />
 
-<p>Our MIT D-Lab Climate Clock team came up with the idea of a meter to showcase 
-MIT’s efforts to "eliminate direct emissions by 2050."</p>
 
-<p>- <a target="_blank" href="https://climate.mit.edu/climateaction/fastforward">Fast 
-Forward: MIT's Climate Action Plan for the Decade (2021) p.12</a></p>
+<!-- START COLLAPSIBLE CONTENT -->
+<button type="button" class="collapsible">Climate Interactive En-ROADS</button>
+<div class="content">
+  
+  <p>As part of our parallel Earth-Day events at MIT and Harvard, we engaged 
+  people using <a target="_blank" href="https://www.climateinteractive.org/en-roads/">Climate 
+  Interactive's En-ROADS</a> simulator to learn about the climate.  
+  Plant-based ice cream served in compostable dishes was served to showcase 
+  sustainable food solutions.</p> 
 
-<p>Student feedback led us to create two versions of the Net Zero Meter: one 
-showing MIT's net zero commitment as a annual percentage(%), the other in absolute 
-numbers.  Moving beyond "0" to "ECO" is the goal.</p>
-
-<div>
+	<div class="alignC">
 	<table>
-	<tr>
-		<td>
-			<p>
-			<ul>
-			  <li>MIT's Climate Goal: Net Zero by 2026. No direct emissions by 2050</li>
-			  <li>UN Sec. General urges developed countries reach Net Zero by 2040</li>
-			  <li>MIT's 2022 emissions were 15% better than 2014 baseline</li>
-			  <li>MIT 2022 Net Zero Meters: CO2-eq Emissions %; CO2-eq Emissions Concentration</li>
-			  <li>MIT emissions are our responsibility!</li>
-			  <li>Net Zero campus emissions safeguards student's and everyone's futures!</li>
-			  <li><a href="https://web.mit.edu/climateclock">https://web.mit.edu/climateclock</a></li>
-			</ul>
-			</p>
-		</td>
-		<td class="imgTable"><div><img src="ccimg/nzmeter_abs.png" alt="Net Zero Meter Earth Week April 2023 181,171mtCO2e/yr" /></div></td>
-	</tr>
+	  <tr>
+		  <td><div><img src="ccimg/MIT_0422_enroads.jpg" class="height250" alt="En-ROADS at MIT on April 22 2022" /></div></td>
+		  <td><div><img src="ccimg/Harvard_0422screens.jpg" class="height250" alt="En-ROADS and Climate Clock projections at Harvard on April 22 2022" /></div></td>
+		</tr>
 	</table>
-</div>
+	</div>
+	<div>Photo Credit: Ella Lopez</div>
 
-<p>What does "Net Zero" mean?  According to the Internation Energy Agency (IEA): "Becoming 
-carbon negative requires a company, sector or country 
-to remove more CO2 from the atmosphere than it emits. Meeting ambitious 
-international climate goals may require global CO2 emissions to fall below
-zero in the second half of this century, achieving what is known as net negative 
-emissions."</p>
+	
+<!--	<p>Going forward, we will integrate feedback from the community and seek 
+	long-term approval, now that we have successfully demonstrated "proof of concept."</p>
+-->
+	
+	</div>
+<br /><br />
+	
+	
+<!-- START COLLAPSIBLE CONTENT -->
+<button type="button" class="collapsible">Climate Clock Backpacks</button>
+<div class="content">
+	
+  <h3 class="section-heading centered">Climate Clock LED Backpack</h3>
+  <div class="section-subheading center">Taking the clock on the road</div>
+	<br /><br />
+	
+	<div class="alignC">
+  	<table>
+  	
+  	  <tr>
+  		  <td>
+  			  <div class="alignC">
+          <video class="width80" controls>
+          <source src="ccimg/ClimateClockBackpackOnElectricScooter_ClaireWang_4-28-22.mp4" type="video/mp4">
+          <!--<source src="movie.ogg" type="video/ogg">-->
+          Your browser does not support the video tag.
+          </video><br />
+					Credit: Claire Wang
+          </div>
+  	    </td>
+  		  <td><p>Beyond the big screen, we've gone mobile via backpack!  Gaurav Patekar (MIT'21) 
+  	    conceived of a community awareness project where climate information is displayed 
+  			on an LED backpack.  People can volunteer to borrow the backpack for a week, 
+				sparking conversations about our climate.  Volunteers can then pass the 
+				backpack on to another person to continue the chain of engagement.</p>
+				</td>
+  		</tr>
+  	</table>
+	</div>
+	<br /><br />
+	
+	<div class="alignC">
+  	<table>
+  	  <tr>
+  		  <td><div><img src="ccimg/D-LabClassTeamPhoto1_ClimateClockLEDBackpack_4-28-22.jpg" class="height300" alt="Group showing off Climate LED backpacks" /></div></td>
+  		  <td><div><img src="ccimg/D-LabClassTeamPhoto2_HenriJessica_ClimateClockLEDBackpack_4-28-22.jpg" class="height300" alt="Henri and Jessica with backpacks showing 420ppm CO2 in atm. and climate deadline 7 years 3 months" /></div></td>
+  	  </tr>
+  	</table>
+	</div>
+		
+  </div>
+</div>
+<br /><br />
 
 </section>
+
+<!-- SCRIPT FOR activing COLLAPSIBLE ELEMENTS (NEEDS to be AFTER the content-->
+<script> 
+var coll = document.getElementsByClassName("collapsible");
+var ii;
+
+for (ii = 0; ii < coll.length; ii++) {
+  coll[ii].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+} 
+</script>
 
 <section id="solutions" class="section">
   <div class="section-title-group">
@@ -1077,16 +1598,20 @@ emissions."</p>
 	
 	<p>Let's change our climate trends for the better by scaling up great solutions!</p>
 	
-	<p>The MIT Climate Clock Team endorses <a target="_blank" href="https://drawdown.org/solutions">Project Drawdown Solutions</a>.</p>
+	<p>The MIT Climate Clock Team endorses <a target="_blank" href="https://drawdown.org/solutions">Project 
+	Drawdown Solutions</a>.</p>
 	
-	<div class="alignC"><a target="_blank" href="ccimg/drawdownSolutions.PNG"><img src="ccimg/drawdownSolutions.PNG" alt="Project Drawdown Solutions across sectors to reduce sources, support sinks, and improve society" /></a></div>
+	<div class="alignC"><a target="_blank" href="ccimg/drawdownSolutions.PNG"><img src="ccimg/drawdownSolutions.PNG" 
+	alt="Project Drawdown Solutions across sectors to reduce sources, support sinks, and improve society" /></a></div>
 	
 	<br />
   	
 		<p>For additional inspiration and action-oriented ideas, visit the following resources:</p>
 		
 	<div><ul>
-  	<li>Hosted November 13-14, 2022, TEDx-Boston <a target="_blank" href="https://tedxboston.com/planetary-stewardship/">Planetary Stewardship</a> talks "elevate transformative ideas on climate"</li>
+  	<li>Hosted November 13-14, 2022, TEDx-Boston <a target="_blank" href=
+	"https://tedxboston.com/planetary-stewardship/">Planetary Stewardship</a> talks "elevate transformative 
+	ideas on climate"</li>
   	
   	<li><a target="_blank" href="https://www.climateinteractive.org/">Climate Interactive</a>
     "creates and shares tools that drive effective and equitable climate action." Policies 
@@ -1095,9 +1620,11 @@ emissions."</p>
   	
   	<li>MIT supports furthering education on solutions and involvment in research via the 
   	<a target="_blank" href="https://climate.mit.edu">Climate Portal</a> where you can learn "<a 
-  	target="_blank" href="https://climate.mit.edu/what-can-be-done-about-climate-change">What Can Be Done About Climate Change</a>"</li>
+  	target="_blank" href="https://climate.mit.edu/what-can-be-done-about-climate-change">What Can Be Done About 
+	Climate Change</a>"</li>
   	
-  	<li>MIT-Industry collaboration via the <a target="_blank" href="https://impactclimate.mit.edu/">MIT Climate and Sustainability Consortium</a> 
+  	<li>MIT-Industry collaboration via the <a target="_blank" href="https://impactclimate.mit.edu/">MIT Climate 
+	and Sustainability Consortium</a> 
   	is all about "working together to vastly accelerate the implementation of large-scale, 
   	real-world solutions, across sectors, to help meet global climate and sustainability challenges"</li>
   	
