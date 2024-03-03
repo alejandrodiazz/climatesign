@@ -15,128 +15,360 @@
 
 <!--Audio Player-->
     <style>
-        #playlist{
-            list-style: none;
-        }
-        #playlist li a{
-            color:black;
-            text-decoration: none;
-        }
-        #playlist .current-song a{
-            color:blue;
-        }
+	#playlist{
+		list-style: none;
+	}
+	#playlist li a{
+		color:black;
+		text-decoration: none;
+	}
+	#playlist .current-song a{
+		color:blue;
+	}
 
-      @font-face { 
-        font-family: "KatwijkMono"; 
-        src: url('./KatwijkMono-Black.otf');
-      }
+	@font-face { 
+	font-family: "KatwijkMono"; 
+	src: url('./KatwijkMono-Black.otf');
+	}
 
-      @keyframes floatText {
-        to {
-          transform: translateX(-280%);
-        }
-      }
-    			
-      .row {
-        font-family: "KatwijkMono";
-        white-space: nowrap;
-        height: 190px;
-        color: white;
-        text-align: center;
-        padding-top: 40px;
-        padding-bottom: 30px;
-        font-size: 90px;
-        box-sizing: border-box;
-      }
-
-      .scroll {
-        animation: floatText 16s forwards linear;
-        animation-delay: 1s;
-      }
-
-      .scrollDeadline {
-        animation: floatText 12s forwards linear;
-        animation-delay: 1s;
-      }
-
-      .green {
-        background-color: #009a59;
-      }
-
-      .red {
-        background-color: red;
-      }
+	@keyframes floatText {
+		to {
+		  transform: translateX(-280%);
+		}
+	}
 			
-			.black {
-			  color: black;
-			}
+	.row {
+		font-family: "KatwijkMono";
+		white-space: nowrap;
+		height: 190px;
+		color: white;
+		text-align: center;
+		padding-top: 40px;
+		padding-bottom: 30px;
+		font-size: 90px;
+		box-sizing: border-box;
+	}
+
+	.scroll {
+	animation: floatText 16s forwards linear;
+	animation-delay: 1s;
+	}
+
+	.scrollDeadline {
+	animation: floatText 12s forwards linear;
+	animation-delay: 1s;
+	}
+
+	.green {
+	background-color: #009a59;
+	}
+
+	.red {
+	background-color: red;
+	}
 			
-			.textMaroon {
-			  color: rgb(207,64,77);
-			}
-			
-			.responsiveWidth { 
-			  width: 100%;  
-				height: auto; 
-			} 
-			
-			.padTable {
+	.black {
+	  color: black;
+	}
+
+	.textMaroon {
+	  color: rgb(207,64,77);
+	}
+
+	.responsiveWidth { 
+	  width: 100%;  
+		height: auto; 
+	} 
+
+	.padTable {
 			
         padding-left: 30px;
         padding-right: 30px;
-			}
+	}
 			
-			.alignC {
-			  text-align: center;
-			}
-			
-			.alignR {
-			  text-align: right;
-			}
-			
-			.width30 {
-			  width: 30%;
-			}
-			
-			.width50 {
-			  width: 50%;
-			}
-			
-			.width80 {
-			  width: 80%;
-			}
-			
-			.logo-link2 {
-      display: block;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      float: none;
-      text-align: center;
-    }
-    
-    .nav-link2 {
-      display: block;
-      padding: 10px 0px;
-      color: #fff;
-      font-size: 15px;
-      text-align: center;
-      text-transform: uppercase;
-    }
-			
-		.imgTable {
-		  vertical-align: top;
-			text-align: center;
-			padding: 10px;
-		}	
+	.alignC {
+	  text-align: center;
+	}
+	
+	.alignR {
+	  text-align: right;
+	}
+	
+	.width30 {
+	  width: 30%;
+	}
+	
+	.width50 {
+	  width: 50%;
+	}
+	
+	.width150px {
+	  width: 150px;
+	}
+	.width80 {
+	  width: 80%;
+	}
+
+	.logo-link2 {
+	  display: block;
+	  margin-top: 10px;
+	  margin-bottom: 10px;
+	  float: none;
+	  text-align: center;
+	}
+	
+	.nav-link2 {
+	  display: block;
+	  padding: 10px 0px;
+	  color: #fff;
+	  font-size: 15px;
+	  text-align: center;
+	  text-transform: uppercase;
+	}
 		
-		.height300 {
-		  height: 300px;
-		}
+	.imgTable {
+	  vertical-align: top;
+		text-align: center;
+		padding: 10px;
+	}	
+	
+	.height300 {
+	  height: 300px;
+	}
+	
+	.height250 {
+	  height: 250px;
+	}
 		
-		.height250 {
-		  height: 250px;
+	.tab div {
+		display: none;
+	}
+
+	.tab asfd {
+		display: block;
+	}
+	.tab div:target {
+		display: block;
 		}
-			
+    .tableBorder tr{
+		border: 1px solid black;
+	}
+
+	 /* Style the button that is used to open and close the collapsible content */
+	.collapsible {
+	  background-color: #eee;
+	  color: #444;
+	  cursor: pointer;
+	  padding: 18px;
+	  width: 100%;
+	  border: none;
+	  text-align: left;
+	  outline: none;
+	  font-size: 15px;
+	}
+
+	/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+	.active, .collapsible:hover {
+	  background-color: #ccc;
+	}
+
+	/* Style the collapsible content. Note: hidden by default */
+	.content {
+	  padding: 0 18px;
+	  display: none;
+	  overflow: hidden;
+	  background-color: #f1f1f1;
+	} 
+	 .collapsible:after {
+	  content: '\02795'; /* Unicode character for "plus" sign (+) */
+	  font-size: 13px;
+	  color: white;
+	  float: right;
+	  margin-left: 5px;
+	}
+
+	.active:after {
+	  content: "\2796"; /* Unicode character for "minus" sign (-) */
+	}
+
+/* slideshow */
+
+* 	{
+	 box-sizing:border-box
+	}
+
+	/* Slideshow container */
+	.slideshow-container {
+	  max-width: 1000px;
+	  position: relative;
+	  margin: auto;
+	}
+
+	/* Hide the images by default */
+	.mySlides {
+	  display: none;
+	}
+
+	/* Next & previous buttons */
+	.prev, .next {
+	  cursor: pointer;
+	  position: absolute;
+	  top: 50%;
+	  width: auto;
+	  margin-top: -22px;
+	  padding: 16px;
+	  color: white;
+	  font-weight: bold;
+	  font-size: 18px;
+	  transition: 0.6s ease;
+	  border-radius: 0 3px 3px 0;
+	  user-select: none;
+	}
+
+	/* Position the "next button" to the right */
+	.next {
+	  right: 0;
+	  border-radius: 3px 0 0 3px;
+	}
+
+	/* On hover, add a black background color with a little bit see-through */
+	.prev:hover, .next:hover {
+	  background-color: rgba(0,0,0,0.8);
+	}
+
+	/* Caption text */
+	.text {
+	  color: #f2f2f2;
+	  font-size: 15px;
+	  padding: 8px 12px;
+	  position: absolute;
+	  bottom: 8px;
+	  width: 100%;
+	  text-align: center;
+	}
+
+	/* Number text (1/3 etc) */
+	.numbertext {
+	  color: #f2f2f2;
+	  font-size: 12px;
+	  padding: 8px 12px;
+	  position: absolute;
+	  top: 0;
+	}
+
+	/* The dots/bullets/indicators */
+	.dot {
+	  cursor: pointer;
+	  height: 15px;
+	  width: 15px;
+	  margin: 0 2px;
+	  background-color: #bbb;
+	  border-radius: 50%;
+	  display: inline-block;
+	  transition: background-color 0.6s ease;
+	}
+
+	.active, .dot:hover {
+	  background-color: #717171;
+	}
+
+	/* Fading animation */
+	.fade {
+	  animation-name: fade;
+	  animation-duration: 1.5s;
+	}
+
+	@keyframes fade {
+	  from {opacity: .4}
+	  to {opacity: 1}
+	}
+<!-- END SLIDESHOW -->
+
+<!-- Slideshow gallery -->
+
+/* Position the image container (needed to position the left and right arrows) */
+.sgcontainer {
+  position: relative;
+}
+
+/* Hide the images by default */
+.sgmySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.sgcursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.sgprev,
+.sgnext {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.sgnext {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.sgprev:hover,
+.sgnext:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.sgnumbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.sgcaption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.sgrow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.sgcolumn {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.sgdemo {
+  opacity: 0.6;
+}
+
+.sgactive,
+.sgdemo:hover {
+  opacity: 1;
+}
+
     </style>
 		
 		
@@ -150,25 +382,622 @@
 data-no-scroll="1" class="left-navigation w-nav"><a 
 href="#clock" class="logo-link2 w-nav-brand"><h1 class="brand-text">MIT Climate Clock</h1></a><nav 
 role="navigation" class="nav-menu w-nav-menu"><a href="#motivation" 
-class="nav-link2 w-nav-link">Motivation</a><a href="#idea" 
-class="nav-link2 w-nav-link">The Idea</a><a href="#solutions" 
-class="nav-link2 w-nav-link">The Solutions</a><a href="#numbers" 
-class="nav-link2 w-nav-link">The Numbers</a><a href="#creation" 
-class="nav-link2 w-nav-link">The Creation</a><a href="#world" 
-class="nav-link2 w-nav-link">The World</a><a href="#future" 
-class="nav-link2 w-nav-link">The Future</a><a href="#team" 
+class="nav-link2 w-nav-link">Motivation</a><a href="#messages" 
+class="nav-link2 w-nav-link">Messages</a><a href="#solutions" 
+class="nav-link2 w-nav-link">Solutions</a><a href="#world" 
+class="nav-link2 w-nav-link">The World</a><a href="#team" 
 class="nav-link2 w-nav-link">Team</a><a href="#contact" 
 class="nav-link2 w-nav-link">Contact</a><a href="#acknowledgements" 
 class="nav-link2 w-nav-link">Acknowledgements</a></nav>
 
+
+<!--<a href="#idea" 
+class="nav-link2 w-nav-link">The Idea</a><a href="#numbers" 
+class="nav-link2 w-nav-link">The Numbers</a><a href="#nzmeter" 
+class="nav-link2 w-nav-link">Net-Zero Meter</a>-->
+
 <div class="hamburger-button w-nav-button"><div class="w-icon-nav-menu"></div></div>
 
 </div>
-<!-- END NAVIGATION BAR -->
+
+
+<!-- START WEBSITE CONTENT -->
+
+
+
+<!--
+<div class="social-footer w-hidden-medium w-hidden-small w-hidden-tiny"><a href="#" class="social-icon-link w-inline-block">
+<img src="https://assets.website-files.com/5531240438615e9e376d4489/54d24db50d5fbeb671afdfd5_social-03-white.svg" width="17" alt=""/></a><a href="#" class="social-icon-link w-inline-block">
+<img src="https://assets.website-files.com/5531240438615e9e376d4489/54d24de00d5fbeb671afdfe7_social-18-white.svg" width="17" alt=""/></a><a href="#" class="social-icon-link w-inline-block">
+<img src="https://assets.website-files.com/5531240438615e9e376d4489/54d24dd8bba289360a8cc463_social-15-white.svg" width="17" alt=""/></a><a href="#" class="social-icon-link w-inline-block">
+<img src="https://assets.website-files.com/5531240438615e9e376d4489/54d24dd50d5fbeb671afdfe2_social-14-white.svg" width="17" alt=""/></a><a href="#" class="social-icon-link w-inline-block">
+<img src="https://assets.website-files.com/5531240438615e9e376d4489/54d24dd00d5fbeb671afdfe0_social-12-white.svg" width="17" alt=""/></a><a href="#" class="social-icon-link w-inline-block">
+<img src="https://assets.website-files.com/5531240438615e9e376d4489/54d24dc40d5fbeb671afdfdd_social-08-white.svg" width="17" alt=""/></a><a href="#" class="social-icon-link w-inline-block">
+<img src="https://assets.website-files.com/5531240438615e9e376d4489/54e77bf6942b09583a0ebbca_social-30-white.svg" width="17" alt=""/></a></div>
+-->
+
+ <!-- Slideshow container -->
+<div id="clock" class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="currentMessageSlides fade">
+    <div class="numbertext">1 / 12</div>
+    <img src="ccimg/1.png" style="width:100%" alt="A TARGET WAS SET TO STOP CLIMATE CHANGE BEFORE WARMING REACHED 1.5&deg;c" />
+    <!--<div class="text">Caption Text</div>-->
+  </div>
+
+  <div class="currentMessageSlides fade">
+    <div class="numbertext">2 / 12</div>
+    <img src="ccimg/2.png" style="width:100%" alt="CURRENT ESTIMATE: WARMING PASSES 1.5&deg;C BY OR BEFORE MAY 2024" />
+    <!--<div class="text">Caption Two</div>-->
+  </div>
+
+  <div class="currentMessageSlides fade">
+    <div class="numbertext">3 / 12</div>
+    <img src="ccimg/3.png" style="width:100%" alt="64 CELTICS GAMES UNTIL 1.5&deg;C" />
+    <!--<div class="text">Caption Three</div>-->
+  </div>
+
+
+  <div class="currentMessageSlides fade">
+    <div class="numbertext">4 / 12</div>
+    <img src="ccimg/4.png" style="width:100%" alt="60 BRUINS GAMES UNTIL 1.5&deg;C" />
+    <!--<div class="text">Caption Three</div>-->
+  </div>
+  
+  <div class="currentMessageSlides fade">
+    <div class="numbertext">5 / 12</div>
+    <img src="ccimg/5.png" style="width:100%" alt="30 RED SOX GAMES UNTIL 1.5&deg;C" />
+    <!--<div class="text">Caption Three</div>-->
+  </div>
+  
+  <div class="currentMessageSlides fade">
+    <div class="numbertext">6 / 12</div>
+    <img src="ccimg/6.png" style="width:100%" alt="11 REVOLUTIONS GAMES UNTIL 1.5&deg;C" />
+    <!--<div class="text">Caption Three</div>-->
+  </div>
+  
+  <div class="currentMessageSlides fade">
+    <div class="numbertext">7 / 12</div>
+    <img src="ccimg/7.png" style="width:100%" alt="6 PATRIOTS GAMES UNTIL 1.5&deg;C" />
+    <!--<div class="text">Caption Three</div>-->
+  </div>
+  <div class="currentMessageSlides fade">
+    <div class="numbertext">8 / 12</div>
+    <img src="ccimg/8.png" style="width:100%" alt="1 BOSTON MARATHON UNTIL 1.5&deg;C" />
+    <!--<div class="text">Caption Three</div>-->
+  </div>
+  <div class="currentMessageSlides fade">
+    <div class="numbertext">9 / 12</div>
+    <img src="ccimg/9.png" style="width:100%" alt="0 PRESIDENTIAL ELECTIONS UNTIL 1.5&deg;C" />
+    <!--<div class="text">Caption Three</div>-->
+  </div>
+  <div class="currentMessageSlides fade">
+    <div class="numbertext">10 / 12</div>
+    <img src="ccimg/10.png" style="width:100%" alt="1 MIT GRADUATING CLASS UNTIL 1.5&deg;C" />
+    <!--<div class="text">Caption Three</div>-->
+  </div>
+  <div class="currentMessageSlides fade">
+    <div class="numbertext">11 / 12</div>
+    <img src="ccimg/11.png" style="width:100%" alt="ACT NOW TO PREVENT +2.0&deg;C" />
+    <!--<div class="text">Caption Three</div>-->
+  </div>
+  <div class="currentMessageSlides fade">
+    <div class="numbertext">12 / 12</div>
+    <img src="ccimg/12.png" style="width:100%" alt="WEB.MIT.EDU/CLIMATECLOCK" />
+    <!--<div class="text">Caption Three</div>-->
+  </div>
+
+  <!-- Next and previous buttons -->
+<!--  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  -->
+</div>
+<br />
+
+<!-- The dots/circles -->
+
+<!--
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div> 
+-->
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("currentMessageSlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+} 
+</script>
+
+
+<!--
+<script>
+ let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+-->
+
+<hr /><br /><br />
+
+<div>
+
+  <!-- <div><img src="ccimg/events.PNG" alt="Earth Day April 22 7-9pm Climate Clock events at Eastman Court MIT and Leahman Hall Harvard" /></div>	 -->
+  <div class="hero-title-wrapper">
+	<h1 class="hero-heading textMaroon">MIT Climate Clock</h1>
+  
+	<table>
+	  <tr>
+			<td>
+				<div class="hero-subheading black">
+				  "Climate change is a threat to human well-being and planetary health. 
+				  The choices and actions implemented in this decade will have impacts 
+				  now and for thousands of years."
+				  <div class="alignR"> - <a target="_blank" href="https://www.ipcc.ch/report/ar6/syr/">IPCC Summary for Policymakers, Synthesis Report (AR6)  - 2023 p.25</a></div>
+				  <br /><br />
+				  "Deep, rapid and sustained mitigation and accelerated implementation of adaptation actions in this decade would reduce projected losses and damages for humans and ecosystems."
+				  <div class="alignR"> - <a target="_blank" href="https://www.ipcc.ch/report/ar6/syr/">IPCC Summary for Policymakers, Synthesis Report (AR6)  - 2023 p.27</a></div>
+				  <br /><br />
+				  "We need to come together now, both within MIT and with like-minded people and institutions everywhere, if our common effort is to succeed."
+				  <div class="alignR"> - <a target="_blank" href="https://climate.mit.edu/climateaction/fastforward">Fast Forward: MIT's Climate Action Plan for the Decade (2021) p.16</a> </div>
+				</div>
+			</td>
+			<td class="padTable width30">
+			  <div><img src="ccimg/MITClimateClock11_LimitGlobalTemp.jpg"
+				alt="Students viewing the MIT Climate Clock on top of South 
+				Face of MIT’s Green Building, Earth Day (4/22/2022)" class="grid-image height250" /></div>
+			</td>		
+		</tr>
+	</table>
+  
+  <!-- <div><a href="#" class="hollow-button white">Button Text</a><a href="#" 
+  class="hollow-button red">Button Text</a></div>-->
+  
+  </div>
+</div>
+
+<section id="motivation" class="section">
+<div class="w-container">
+  <div class="section-title-group">
+   <h2 class="section-heading centered">Motivation</h2>
+   <div class="section-subheading center">"If we act swiftly, it is not too late 
+	 to prevent much more severe changes to the Earth's climate." - <a target="_blank" 
+	 href="https://climate.mit.edu/">MIT Climate Portal</a></div>
+  </div>
+
+  <!--<div class="section-title-group">
+		 <h3 class="section-heading centered">World Scientists Warning of a Climate Emergency</h3>
+  </div>-->
+	 
+	 <p>Scientists from around the world warn us that we are in the midst of a 
+	 climate emergency. In their <a target="_blank" 
+	 href="https://scientistswarning.forestry.oregonstate.edu/">"World 
+	 Scientists Warning of a Climate Emergency,"</a> over 15,000 scientists from 
+	 163 countries present graphical data showing vital metrics about our climate. 
+	 They write that, "greenhouse gas emissions are still rising, with increasingly 
+	 damaging effects," and that, "with few exceptions, we are largely failing to 
+	 address this predicament."</p>
+	 
+	 <p>This warning draws on a long history of scientists raising alarms about 
+	 the state of our earth. In 1992, MIT professor and Nobel Prize winner Henry 
+	 Kendall spearheaded the  <a target="blank" 
+	 href="https://www.ucsusa.org/resources/1992-world-scientists-warning-humanity">"World 
+	 Scientists Warning to Humanity 1992,"</a> which argued for the need to curb 
+	 environmental degradation, lest we "so alter the living world that it will 
+	 be unable to sustain life in the manner that we know."</p>
+	 
+	<!-- <p>In parallel to scientists' warnings, over 1,900 local governments in 34 
+	 countries have now formally declared a climate emergency. These efforts are 
+	 essential and reinforce our obligation as citizens of the world to seek to 
+	 protect the earth before it is too late. It is in this spirit that we 
+	 undertook the climate clock project.</p> -->
+	 
+
+
+	<div>The best science from the AR 6 IPCC report teaches us that: </div>
+	<div>
+		<ul>
+			<li>Climate change is a threat to human well-being and planetary health <a href="https://www.ipcc.ch/report/ar6/syr/">(Section C. p.25)</a></li>
+			<li>Risks and projected adverse impacts and related losses and damages from climate change escalate with every increment of global warming <a href="https://www.ipcc.ch/report/ar6/syr/">(Section B2. p.15)</a></li>
+			<li>Limiting human-caused global warming requires net zero CO2 emissions <a href="https://www.ipcc.ch/report/ar6/syr/">(Section B5, p. 20)</a></li>
+		</ul>
+	</div>
+
+	<h3>Escalating Impacts</h3>
+
+	<p>Scientists predict that impacts will be more severe the more global 
+	temperature increases above 1.5 °C. Explore projected impacts below by 
+	clicking on the projected temperature increase. The time to act is now, 
+	when temperatures are lower!</p>
+
+	<h4>Potential Impact of Climate Change from Temperature rise above 
+	pre-industrial levels</h4>
+
+	<div class="tab"><table class="tableBorder">
+		<tr class="tableBorder">
+			<td><button type="button" class="collapsible">1.5&deg;C</button>
+				<div class="content">
+			  <ul>
+				<li>Major effects on warm-water coral reef ecosystem.</li>
+				<li>Significant imapcts on vulnerable ecosystems and species (polar regions, wetlands, and cloud forests).</li>
+				<li>Increase in coastal and river flooding.</li>
+				<li>Increase in extreme weather events.</li>
+				<li>Increase in the spread of tropical infectious disease.</li>
+				<li>Increase in heat-related morbidity and mortality.</li>
+			  </ul>
+			</div></td>
+		</tr>
+		<tr class="tableBorder">
+			<td><button type="button" class="collapsible">2-3&deg;C</button>
+				<div class="content">
+				<ul>
+					<li>The Maldives, the Marshall Islands, Tuvalu, and many other small island nations abandoned.</li>
+					<li>Major loss of warm-water coral reef ecosystem.</li>
+					<li>Major changes in the Arctic regions with a substantial loss of Arctic sea ice.</li>
+					<li>Major increase in extreme weather events and the spread of infectious disease.</li>
+					<li>Major increase in heat-related morbidity and mortality, especially in the low latitudes.</li>
+					<li>Significant impacts on vulnerable ecosystems(polar regions, wetlands, cloud forests, and mangroves).</li>
+					<li>Significant increase in coastal and river flooding around the world.</li>
+					<li>Significant impacts on low latitude fisheries.</li>
+					<li>Decrease in crop yields and productivity especially in the tropics and sub-tropical regions.</li>
+				</ul>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td><button type="button" class="collapsible">3-4&deg;C</button>
+				<div class="content">
+				<ul>
+					<li>Major impacts on all ecosystems including significant increase in species extinction.</li>
+					<li>Loss of all warm-water and may cold-water coral reef ecosystems.</li>
+					<li>Arctic completely free of sea ice in summer, Arctic temperature increase by 8&deg;C.</li>
+					<li>Disappearance of the majority of mountain glaciers, including all ice on Kilimanjaro (Tanzania).</li>
+					<li>Major increase in extreme weather events and spread of infectious disease.</li>
+					<li>Major decreases in agricultural and fishery production and available water resources.</li>
+					<li>Food and water security become major political and humanitarian issues.</li>
+					<li>Environmental forced mass migration increases.</li>
+					<li>Ocean and terrestrial carbon sinks reduce, accelerating climate change.</li>
+				</ul>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td><button type="button" class="collapsible">4-5&deg;C</button>
+				<div class="content">
+				<ul>
+					<li>Catastrophic loss of ecosystems and species all around the world.</li>
+					<li>Melting of western Antarctic and Greenland ice sheets accelerates, causing significant rises in global sea level.</li>
+					<li>Fifth of world population affected by flooding and major coastal cities abandoned.</li>
+					<li>Environmental forced mass migration accelerates and conflicts over resources increase.</li>
+					<li>In many countries, summer temperatures persistently stay above 40&deg;C.</li>
+					<li>Heatwaves with temperatures as high as 50&deg;C become common.</li>
+					<li>Over 3.5 billion people become water-stressed.</li>
+					<li>Wildfies create major air pollution events and human health crises.</li>
+					<li>Global food production plummets, leading to widespread malnutrition and starvation.</li>
+				</ul>
+				</div>
+			</td>
+		</tr>
+		<tr>	
+			<td><button type="button" class="collapsible">5-6&deg;C or higher</button>
+				<div class="content">
+				<ul>
+					<li>Don't go there.</li>
+				</ul>
+				</div>
+			</td>
+		</tr>
+	</table></div>
+	
+	<div>Reference: <a href="https://global.oup.com/academic/product/climate-change-a-very-short-introduction-9780198867869?cc=us&lang=en&" target="_blank">Maslin, M. in "Climate Change: A Very Short Introduction" 
+	4th Ed. Oxford U. Press. 2021</a></div><br /><br />
+		
+	<p><i>Climate impacts are not and will not be equally distributed. Students and 
+	young people, citizens of small island nations and low income 
+	communities—these are populations that will bear the brunt of climate 
+	change impacts. We are a group of students, educators, and young people 
+	who intend to spur action today to mitigate climate change and 
+	minimize harm in the future.</i></p>
+	
+	<p>We can choose to use our education and our privilege for the greater 
+	good. We aim to help chart the path to a livable future—for ourselves, 
+	our families and friends, and our communities—to achieve planetary health 
+	and well-being. We do so with a spirit of collaboration with others who 
+	feel a call to action.</p>
+  
+	<p>The MIT Climate Clock is intended to provide daily reminders 
+	and inspiration to accelerate climate action.  It consists of sets of 
+	climate-related messages which we update regularly. Since 2021, we have 
+	projected climate messages on buildings at MIT and in the Cambridge, MA 
+	area. As global systems change and we learn, we continue to refine our 
+	messages.</p>
+  
+  <!--2022 statements:
+  <p>The Climate Clock is the effort of a diverse group of students, faculty 
+  and alumni who seek to share the urgency of the climate crisis with the wider 
+  community in order to raise awareness and spark action. As members of the 
+  younger generations, who will experience the impacts of decisions made by 
+  those in power today, we feel it is imperative to make our voices heard.</p>
+  
+  <p>Currently, there is no everyday measure that informs us about the health 
+  of our planet. The MIT Climate Clock presents to the MIT community and to the 
+  wider world essential information about the climate emergency that is here now. 
+  The purpose of the Climate Clock is not to frighten or politicize, but to raise 
+  awareness of troubling scientific measures and to motivate people to come 
+  together to plan for our collective health and safety. Our role is to be one 
+  warning beacon among many.</p>-->
+	
+	<br /><br />
+	
+
+	
+</div>
+</section>
+
+
+<section id="messages" class="section section-gray">
+  <div class="section-title-group">
+		<h2 class="section-heading centered">Messages</h2>
+    <div class="section-subheading center"></div>
+  </div>
+  
+<!-- START COLLAPSIBLE CONTENT -->
+<button type="button" class="collapsible">Hack the Climate Clock</button>
+<div class="content">
+
+<div class="section-title-group">
+    <div class="section-subheading center">MIT Green Building, November 30<sup>th</sup> - December 12<sup>th</sup>, 2023</div>
+  </div>
+
+<p>In Fall 2023, the Undergraduate Association Sustainability Committee set up 
+a "Hack the Climate Clock" event, opening up the opportunity for all students 
+across MIT's campus to compete in proposing the best new climate message for the 
+November / December 2023 period. The winning student team would get the 
+opportunity to project their message onto the Green Building (#54), one of 
+the tallest buildings in Cambridge and home to the Department of Earth, 
+Atmospheric, and Planetary Sciences.</p>
+
+<p>Four teams of students submitted ideas for updating the Climate Clock. 
+The climate message created by MIT undergraduates Norah Miller and Eleanor
+Li was selected as "the winner."  Norah and Eleanor’s climate clock message 
+displayed from November 30 through December 12, 2023 to coincide with COP28.</p>
+
+
+ <div class="alignC">
+    <video class="height250" controls>
+      <source src="ccimg/CC_Nov2023.mp4" type="video/mp4">
+      <!--<source src="movie.ogg" type="video/ogg">-->
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+
+<p>For details on Norah and Eleanor's Nov/Dec 2023 projection, see: <a 
+href="refFall2023.docx">References and Assumptions</a></p>
+</div>
+
+<br /><br />
+
+<!-- START COLLAPSIBLE CONTENT -->
+<button type="button" class="collapsible">MIT Net-Zero Meter</button>
+<div class="content">
+
+  <div class="section-title-group">
+    <div class="section-subheading center">MIT Green Building, Spring 2023</div>
+  </div>
+
+<br /><br />
+<div class="alignC"><img src="ccimg/nzmeter_percent.png" alt="Net Zero Meter Earth Week April 2023 15% Progress" /></div>
+
+<br /><br />
+
+<p>Our MIT D-Lab Climate Clock team came up with the idea of a meter to showcase 
+MIT’s efforts to "eliminate direct emissions by 2050" the commitment the MIT 
+Administration made in <a target="_blank" 
+href="https://climate.mit.edu/climateaction/fastforward">Fast 
+Forward: MIT's Climate Action Plan for the Decade (2021) p.12</a>. The 
+Administration has also committed to Net-Zero direct emissions by 2026.</p>
+
+<p>Student feedback led us to create two versions of the MIT Net Zero Meter: one 
+showing MIT's net zero commitment as an annual percentage(%), the other in absolute 
+numbers.  Moving beyond "0" to "ECO" is the goal. MIT Climate Clock team member, Jillian James, 
+Aero Astro '10 and '16, who had taken a course covering spaceship dashboard design, 
+led in the design of this meter.</p>
+
+<h3>Complete Message Accompanying the Net-Zero Meter</h3>
+<div>
+	<table>
+	<tr>
+		<td>
+			<div>
+			<ul>
+			  <li>MIT's Climate Goal: Net Zero by 2026. No direct emissions by 2050</li>
+			  <li>UN Sec. General urges developed countries reach Net Zero by 2040</li>
+			  <li>MIT's 2022 emissions were 15% better than 2014 baseline</li>
+			  <li>MIT 2022 Net Zero Meters: CO2-eq Emissions %; CO2-eq Emissions Concentration</li>
+			  <li>MIT emissions are our responsibility!</li>
+			  <li>Net Zero campus emissions safeguards student's and everyone's futures!</li>
+			  <li><a href="https://web.mit.edu/climateclock">https://web.mit.edu/climateclock</a></li>
+			</ul>
+			</div>
+		</td>
+		<td class="imgTable"><div><img src="ccimg/nzmeter_abs.png" alt="Net Zero Meter Earth Week April 2023 181,171mtCO2e/yr" /></div></td>
+	</tr>
+	</table>
+</div>
+
+<button type="button" class="collapsible">What does "Net Zero" mean?</button>
+<div class="content">
+MIT has committed to net-zero direct emissions by 2026, meaning that 
+MIT must take as much carbon out of the atmosphere as it put into it. 
+However, research shows the climate mitigation may require us to go 
+carbon negative.  According to the Internation Energy Agency (IEA): "Becoming 
+carbon negative requires a company, sector or country 
+to remove more CO2 from the atmosphere than it emits. Meeting ambitious 
+international climate goals may require global CO2 emissions to fall below
+zero in the second half of this century, achieving what is known as net negative 
+emissions."</div>
+
+<br /><br />
+
+</div>
+<br /><br />
+	
+<!-- START COLLAPSIBLE CONTENT -->
+<button type="button" class="collapsible">First Four MIT Climate Clocks</button>
+<div class="content">
+	
+	
+  <div class="section-title-group">
+    <!--<h2 class="section-heading centered"></h2>-->
+    <div class="section-subheading center">MIT Green Building, 2021 and 2022</div>
+  </div>
+	
+	<p>The MIT Climate Clock team originated as a <a target="_blank" 
+	 href="https://d-lab.mit.edu/news-blog/blog/mit-climate-clock-d-lab-water-climate-change-and-health">MIT D-Lab: Water, 
+	 Climate Change and Health</a> class project in 
+	 Spring 2020, and has continued from then until now with D-Lab involvement and 
+	 support. While originally considered as an MIT hack, the MIT Climate Clock 
+	 team quickly realized that we wanted to be a permanenber presence on campus. 
+	 Hacks  are one-offs, but we wanted to be a permanent installation.  Therefore 
+	 we decided to pursue MIT Administration approval.  Our idea was originally 
+	 inspired by the CITGO sign in Kenmore Square, a prominent feature of the Boston 
+	 skyline, that has advertised a fossil fuel corporation since the 1960's. We 
+	 wanted to create a new landmark on the Cambridge skyline, marking a different 
+	 era with different priorities and values.</p>
+		 
+	<p>Originally we wanted to project NOAA's carbon dioxide animation which 
+	shows how atmospheric CO<sub>2</sub> concentration has increased dramatically 
+	over the last 800,000 years, and exponentially in the past century. 
+	But then the Covid-19 pandemic came and although there was a D-Lab team 
+	already formed to imagine and carry out a monumental science-art display, 
+	the year 2020 was not the right time to begin.</P>
+	
+	<p>Six months later, we learned of the New York City Climate Clock, 
+	which began projection in September 2020. We thought: "Yes! That's 
+	exactly what we want to do too." From that day forward, our aim 
+	was to create and project climate messages along the lines of the NYC 
+	Climate Clock model.</p>
+
+	 <p>We sought to display 
+	 the MIT Climate Clock in the most fitting location on campus &mdash; at the 
+	 top of the south facade of the Green Building, aka the Department of Earth, 
+	 Atmospheric and Planetary Science building, the 1<sup>st</sup> (then) and 
+	 now 2<sup>nd</sup> tallest building in Cambridge.</p>
+	
+	<p>The MIT Climate Clock received MIT Administration approval for its first 
+	projection during Earth Week, April 22, 2021. Since then, we have been 
+	approved for six short-duration (10 days to 2 mo.) projections. The first 
+	four displays projected the same message, only changing locations on different 
+	parts of the Green Building.</p>
+	
+	<div>
+	<table>
+	<tr>
+		<td class="imgTable"><div><img src="ccimg/southfaceBig_april2021.png" class="height300" 
+		alt="MIT Green Building South Face April 2021" /><br />
+		Projection 1: April 22 (Earth Day) to April 30, 2021. The location of 
+		this projection was at the bottom of the south fa&ccedil;ade of the MIT Green Building.</div>
+		</td>
+		<td class="imgTable"><div><img src="ccimg/proj2_300.jpg" class="height300" alt="MIT Green Building West face Fall 2021" /><br />
+		Projection 2: October 29 to November 21, extended to December 21, 2021. The location of this 
+		projection was at the top of the west fa&ccedil;ade of the MIT Green Building.</div>
+		</td>
+		<td class="imgTable"><div><img src="ccimg/MIT_0422_greenbuilding.jpg" class="height300" 
+		alt="MIT Green Building Top South Face April 2022" /><br />
+		Projection 3: April 22 (Earth Day) to May 27, 2022. The location of this projection 
+		was at the top south fa&ccedil;ade of the MIT Green Building.</div>
+		</td>
+		<td class="imgTable"><div><img src="ccimg/2_CO2EmissionsBudgetTextfrMemorialDrive_JJ_300.jpg" class="height300" 
+		alt="MIT Green Building Top South Face April 2022" /><br />
+		Projection 4: November 8 to 18, 2022. The location of this projection 
+		was at the top south fa&ccedil;ade of the MIT Green Building.</div>
+		</td>
+	</tr>
+  </table>
+  </div>
+		
+<!--	<p>Having now completed the 4th short-term projection of the MIT Climate Clock, 
+	we are once again requesting of the MIT Administration/MIT Climate Nucleus 
+	permission to display the MIT Climate Clock long-term.</p>
+
+	<p>In addition, the team has conducted a 10-question climate survey of the MIT 
+	community over a period of two weeks concurrent with COP 27. Survey results will 
+	be posted here once reviewed and approved by the Climate Nucleus.</p>
+-->
+
+	<p>In 2021, the team projected onto the west side of the Green building, as 
+	seen in the video below.</p>
+	
+  <div class="alignC">
+    <video class="width80" controls>
+      <source src="ccimg/MITClimateClock_WestFace_TopofGreenBldg_vid3_BEST_12-03-21.mp4" type="video/mp4">
+      <!--<source src="movie.ogg" type="video/ogg">-->
+      Your browser does not support the video tag.
+      </video><br />
+			Video Credit: Gaurav Patekar<br /><br />
+  </div>
+
+	<p>Our team has evolved the "climate message" concept over time. The first 
+	four projections, included the <a href="https://climateclock.world/science" 
+	target="_blank">NYC Climate Clock</a> "deadline" and "lifeline" calculations. 
+	Both their message and our message centered 
+	around the "the deadline" &mdash; the projected time remaining before the 
+	global average annual temperature warming exceeded 1.5&deg;C, the more ambitious 
+	of the Paris Climate Goals. Concurrently, the team collected responses from the 
+	MIT community via a survey conducted with passers-by at the Stratton Student 
+	Center. Incorporating community feedback and anticipating global average 
+	temperature to overshoot the 1.5oC goal sooner than projected, we decided on 
+	a new MIT Climate message in April 2023: the MIT "Net-Zero Meter." This 
+	projection showed MIT's progress and commitment to achieve net-zero 
+	greenhouse gas emissions by a 2050 deadline.</p>
+
+    <div class="section-title-group">
+		<!--<h2 class="section-heading centered">Prior Messages</h2>-->
+    <div class="section-subheading center">What the First Climate Clock Shows</div>
+	</div>
+
 
 
 <!-- CLIMATE CLOCK SCROLLBAR -->
-<div id="clock">
+<div>
 <div class="row green" id="item1" style="overflow: hidden">
       <div class="scroll" >
           &nbsp; &nbsp; GOAL: LIMIT GLOBAL TEMPERATURE RISE TO 1.5&deg;C (2.7&deg;F)
@@ -242,12 +1071,14 @@ class="nav-link2 w-nav-link">Acknowledgements</a></nav>
       // if(nmin<=9) nmin="0"+nmin;
       // if(nsec<=9) nsec="0"+nsec;
 
-      var second_standard = 2022*12*30*24*60*60  + 3*30*24*60*60  + 22 * 24*60*60    + 12 * 60*60  + 27 *60  + 50 //corrected 4/22/2022 12:27:50
+      //var second_standard = 2022*12*30*24*60*60  + 3*30*24*60*60  + 22 * 24*60*60    + 12 * 60*60  + 27 *60  + 50 //corrected 4/22/2022 12:27:50
+      var second_standard = 2023*12*30*24*60*60  + 11*30*24*60*60  + 12 * 24*60*60    + 2 * 60*60  + 4 *60  + 0 //corrected 12/12/2023 02:04:00
       //var current_seconds = (nmonth+1)*30*24*60*60+ ndate *24*60*60 +  nhour*60*60  + nmin *60 + nsec
       var current_seconds = nyear*12*30*24*60*60  + (nmonth)*30*24*60*60+ (ndate) *24*60*60 +  nhour*60*60  + nmin *60 + nsec
       var difference = current_seconds - second_standard
 
-      var carbon_budget = 305949055885 - (difference * 1337)  //corrected 4/22/2022 12:27:50
+      //var carbon_budget = 305949055885 - (difference * 1337)  //corrected 4/22/2022 12:27:50
+      var carbon_budget = 236787429938 - (difference * 1337)  //corrected 12/12/2023 02:04:00
 
       //var carbon_budget = 281631406619 - (difference * 1331)  /April 17th
       // var debug = String(nmonth) +","+ String(ndate) +","+ String(nhour) +","+ String(nmin) +","+ String(nsec)
@@ -350,128 +1181,20 @@ class="nav-link2 w-nav-link">Acknowledgements</a></nav>
 
 <!-- END CLIMATE CLOCK SCROLLBAR -->
 
-<!-- START WEBSITE CONTENT -->
 
 
-
-<!--
-<div class="social-footer w-hidden-medium w-hidden-small w-hidden-tiny"><a href="#" class="social-icon-link w-inline-block">
-<img src="https://assets.website-files.com/5531240438615e9e376d4489/54d24db50d5fbeb671afdfd5_social-03-white.svg" width="17" alt=""/></a><a href="#" class="social-icon-link w-inline-block">
-<img src="https://assets.website-files.com/5531240438615e9e376d4489/54d24de00d5fbeb671afdfe7_social-18-white.svg" width="17" alt=""/></a><a href="#" class="social-icon-link w-inline-block">
-<img src="https://assets.website-files.com/5531240438615e9e376d4489/54d24dd8bba289360a8cc463_social-15-white.svg" width="17" alt=""/></a><a href="#" class="social-icon-link w-inline-block">
-<img src="https://assets.website-files.com/5531240438615e9e376d4489/54d24dd50d5fbeb671afdfe2_social-14-white.svg" width="17" alt=""/></a><a href="#" class="social-icon-link w-inline-block">
-<img src="https://assets.website-files.com/5531240438615e9e376d4489/54d24dd00d5fbeb671afdfe0_social-12-white.svg" width="17" alt=""/></a><a href="#" class="social-icon-link w-inline-block">
-<img src="https://assets.website-files.com/5531240438615e9e376d4489/54d24dc40d5fbeb671afdfdd_social-08-white.svg" width="17" alt=""/></a><a href="#" class="social-icon-link w-inline-block">
-<img src="https://assets.website-files.com/5531240438615e9e376d4489/54e77bf6942b09583a0ebbca_social-30-white.svg" width="17" alt=""/></a></div>
--->
-
-<div><!-- class="content">-->
-
-  <!-- <div><img src="ccimg/events.PNG" alt="Earth Day April 22 7-9pm Climate Clock events at Eastman Court MIT and Leahman Hall Harvard" /></div>	 -->
-  <div class="hero-title-wrapper">
-	<h1 class="hero-heading textMaroon">MIT Climate Clock</h1>
-  
-	<table>
-	  <tr>
-			<td>
-        <div class="hero-subheading black">"The 2018 Intergovernmental Panel on Climate Change Report starkly presented the challenge society faces to achieve rapid progress on cutting emissions in this decade:
-    		  <blockquote>Without increased and urgent mitigation ambition in the coming years, leading to a sharp decline in greenhouse gas emissions by 2030, global warming will surpass 1.5&deg;C in the following decades...</blockquote>
-					We need to come together now, both within MIT and with like-minded people and institutions everywhere, if our common effort is to succeed."
-  	  		<div class="alignR"> - <a target="_blank" href="https://climate.mit.edu/climateaction/fastforward">Fast Forward: MIT's Climate Action Plan for the Decade (2021) p.16</a> </div>
-	  		</div>
-		  </td>
-		  <td class="padTable width30">
-			  <div><img src="ccimg/MITClimateClock11_LimitGlobalTemp.jpg"
-				alt="Students viewing the MIT Climate Clock on top of South Face of MIT’s Green Building, Earth Day (4/22/2022)" class="grid-image height250" /></div>
-      </td>		
-		</tr>
-	</table>
-  
-  
-  <!-- <div><a href="#" class="hollow-button white">Button Text</a><a href="#" 
-  class="hollow-button red">Button Text</a></div>-->
-  
-  </div>
-</div>
-
-<section id="motivation" class="section">
-<div class="w-container">
-  <div class="section-title-group">
-   <h2 class="section-heading centered">Motivation</h2>
-   <div class="section-subheading center">"If we act swiftly, it is not too late 
-	 to prevent much more severe changes to the Earth's climate." - <a target="_blank" 
-	 href="https://climate.mit.edu/">MIT Climate Portal</a></div>
-  </div>
-  
-  <div class="alignC">
-    <video class="width50" controls muted>
-      <source src="ccimg/MITCC_Complete_2_20221109.mp4" type="video/mp4">
-      <!--<source src="movie.ogg" type="video/ogg">-->
-      Your browser does not support the video tag.
-      </video><br />
-  </div>
-  
-  <p>The Climate Clock is the effort of a diverse group of students, faculty 
-  and alumni who seek to share the urgency of the climate crisis with the wider 
-  community in order to raise awareness and spark action. As members of the 
-  younger generations, who will experience the impacts of decisions made by 
-  those in power today, we feel it is imperative to make our voices heard.</p>
-  
-  <p>Currently, there is no everyday measure that informs us about the health 
-  of our planet. The MIT Climate Clock presents to the MIT community and to the 
-  wider world essential information about the climate emergency that is here now. 
-  The purpose of the Climate Clock is not to frighten or politicize, but to raise 
-  awareness of troubling scientific measures and to motivate people to come 
-  together to plan for our collective health and safety. Our role is to be one 
-  warning beacon among many.</p>
-	
-	<br /><br />
-	
-  <div class="section-title-group">
-		 <h3 class="section-heading centered">World Scientists Warning of a Climate Emergency</h3>
-  </div>
-	 
-	 <p>Scientists from around the world warn us that we are in the midst of a 
-	 climate emergency. In their <a target="_blank" 
-	 href="https://scientistswarning.forestry.oregonstate.edu/">"World 
-	 Scientists Warning of a Climate Emergency,"</a> over 14,000 scientists from 
-	 158 countries present graphical data showing vital metrics about our climate. 
-	 They write that, "greenhouse gas emissions are still rising, with increasingly 
-	 damaging effects," and that, "with few exceptions, we are largely failing to 
-	 address this predicament."</p>
-	 
-	 <p>This warning draws on a long history of scientists raising alarms about 
-	 the state of our earth. In 1992, MIT professor and Nobel Prize winner Henry 
-	 Kendall spearheaded the  <a target="blank" 
-	 href="https://www.ucsusa.org/resources/1992-world-scientists-warning-humanity">"World 
-	 Scientists Warning to Humanity 1992,"</a> which argued for the need to curb 
-	 environmental degradation, lest we "so alter the living world that it will 
-	 be unable to sustain life in the manner that we know."</p>
-	 
-	 <p>In parallel to scientists' warnings, over 1,900 local governments in 34 
-	 countries have now formally declared a climate emergency. These efforts are 
-	 essential and reinforce our obligation as citizens of the world to seek to 
-	 protect the earth before it is too late. It is in this spirit that we 
-	 undertook the climate clock project.</p>
-</div>
-</section>
-
-<section id="idea" class="section section-gray">
-  <div class="section-title-group">
-		<h2 class="section-heading centered">The Idea</h2>
-    <div class="section-subheading center">What the Climate Clock Shows</div>
-	</div>
-	
 	<p>We project scientifically accurate information on the top of the south 
-	face of the Green Building. The building is both the tallest building in Cambridge, 
+	face of the Green Building. The building is one of the tallest in Cambridge, 
 	and home to the MIT Department of Earth, Atmosphere and Planetary Sciences. 
 	The MIT Climate Clock features four lines that highlight the need for climate 
 	action.</p>
 	
-	<br />
-  <div class="section-subheading center"><b>TOGETHER WE CAN CHANGE!</b></div>
-	<br />
 	
+<!-- START COLLAPSIBLE CONTENT -->
+<button type="button" class="collapsible">Details: Meaning of Each Line</button>
+<div class="content">
+
+
 	<div class="w-row">
   	<div class="column-0-padding w-col w-col-3"><img src="ccimg/goal.png" width="100" alt="" class="grid-image"/>
   	<h3>Goal</h3><p>to limit global temperature increase to 1.5&deg;C  (2.7&deg;F) which is the target 
@@ -494,69 +1217,60 @@ class="nav-link2 w-nav-link">Acknowledgements</a></nav>
 		currently provided through renewable sources.</p>
 		</div>		
 	</div>
-</section>
-
-<section id="solutions" class="section">
-  <div class="section-title-group">
-		<h2 class="section-heading centered">The Solutions</h2>
-    <div class="section-subheading center">Change for Climate!</div>
-	</div>
 	
-	<p>Let's change our climate trends for the better by scaling up great solutions!</p>
-	
-	<p>The MIT Climate Clock Team endorses <a target="_blank" href="https://drawdown.org/solutions">Project Drawdown Solutions</a>.</p>
-	
-	<div class="alignC"><a target="_blank" href="ccimg/drawdownSolutions.PNG"><img src="ccimg/drawdownSolutions.PNG" alt="Project Drawdown Solutions across sectors to reduce sources, support sinks, and improve society" /></a></div>
+	<br /><br />
 	
 	<br />
-  	
-		<p>For additional inspiration and action-oriented ideas, visit the following resources:</p>
-		
-	<div><ul>
-  	<li>Hosted November 13-14, 2022, TEDx-Boston <a target="_blank" href="https://tedxboston.com/planetary-stewardship/">Planetary Stewardship</a> talks "elevate transformative ideas on climate"</li>
-  	
-  	<li><a target="_blank" href="https://www.climateinteractive.org/">Climate Interactive</a>
-    "creates and shares tools that drive effective and equitable climate action." Policies 
-  	enable solutions, and what better way to learn than to try out simulated scenarios 
-  	yourself and share with others!</li>
-  	
-  	<li>MIT supports furthering education on solutions and involvment in research via the 
-  	<a target="_blank" href="https://climate.mit.edu">Climate Portal</a> where you can learn "<a 
-  	target="_blank" href="https://climate.mit.edu/what-can-be-done-about-climate-change">What Can Be Done About Climate Change</a>"</li>
-  	
-  	<li>MIT-Industry collaboration via the <a target="_blank" href="https://impactclimate.mit.edu/">MIT Climate and Sustainability Consortium</a> 
-  	is all about "working together to vastly accelerate the implementation of large-scale, 
-  	real-world solutions, across sectors, to help meet global climate and sustainability challenges"</li>
-  	
-  	<li>MIT <a target="_blank" href="https://climategrandchallenges.mit.edu/">Climate Grand Challenges</a> is 
-  	"a whole-of-MIT initiative to deliver high-impact climate solutions for the world"</li>
-	</ul></div>
+  <div class="section-subheading center"><b>TOGETHER WE CAN CHANGE!</b></div>
+	<br /><br />
 	
-	<p>For additional MIT Climate Solutions - stay tuned for updates!</p>
-	
-	<p>If you have a solution you'd like to share with us, please <a href="mailto:climateclock@mit.edu">Contact Us</a>.</p>
-	
-</section>
+  <p>This project has given us hope. As one team member, Jenning Chen, MIT'21, 
+  puts it  "I am a senior. I am graduating after four years. Yet this is the 
+  best thing I have ever done at MIT."</p>
+  
+  <p>History has shown that with united action, we can have a global impact. 
+  It's been done before. For example, as a direct result of global actions 
+  taken after signing the historic Montreal Protocol, <a target="_blank" 
+  href="https://www.nasa.gov/feature/goddard/2020nasa-data-aids-ozone-hole-s-journey-to-recovery">satellite data</a> has shown 
+  that the ozone hole has healed.</p>
+  
+  <p>In 2021, climate campaigners at the Glasgow, Scotland Conference of the 
+  Parties COP26 turned out in huge numbers, massively exceeding expectations. 
+  Youth-led groups, such as Friday for the Future, Extinction Rebellion and 
+  the Saturday Global Day of Action showed that the climate movement by youth 
+  and ordinary citizens matters and can make a difference.</p>
+  
+  <p>Humans are a powerful species &mdash; we have changed the climate of the entire 
+  planet without intending to. Now, with conscious effort and the force of a 
+  committed global community, we must help create a livable climate to survive.  
+  By acting together, we can turn this emergency into an opportunity to create 
+  a better world. The ultimate goal that we aspire to is a habitable and 
+  equitable planet for all humans and all life on Earth.</p>
 
+	
+</div>   <!-- END COLLAPSIBLE CONTENT -->
 
-<section id="numbers" class="section section-gray">
-  <div class="section-title-group">
-    <h2 class="section-heading centered">The Numbers</h2>
-    <div class="section-subheading center">Where they come from</div>
-  </div>
+<br /><br />
+
+  <div class="section-subheading center">Sources of the Numbers</div>
+  
   <p>Our carbon dioxide budget data is aligned with the latest <a target="_blank" 
   href="https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_Full_Report.pdf">IPCC AR6 2021 report</a>
    (see table SPM.2). The resulting deadline should closely mirror the numbers displayed on the <a 
    target="_blank" href="https://www.mcc-berlin.net/en/research/co2-budget.html">Mercator Institute website</a>
-	 .  Lifeline estimates are the result of counting forward from the middle of 2020 starting from 12.55%, based on 
+	 .  Lifeline global renewable energy sourcing estimates are the result of counting forward from the middle of 2020 starting from 12.55%, based on 
 	 data from the <a target="_blank" href="https://www.bp.com/content/dam/bp/business-sites/en/global/corporate/pdfs/energy-economics/statistical-review/bp-stats-review-2021-full-report.pdf">World Energy 2021 Special Report</a>.
 	 </p>
 	 	 
 	 <br /><br />
+
+<!-- START COLLAPSIBLE -->
+<button type="button" class="collapsible">Details: Carbon Dioxide (CO<sub>2</sub>) and Rewnewable Energy Accounting Guide</button>
+<div class="content">
 		 
-   <div class="section-title-group">
+   <!--<div class="section-title-group">
        <h3 class="section-heading centered">Carbon Dioxide (CO<sub>2</sub>) Accounting Guide</h3>
-   </div>
+   </div>-->
 	 
 	 <p>In order to figure out the time available for action, one can compute a carbon dioxide budget. 
     The budget answers the question "how much carbon dioxide can we put into the atmosphere, 
@@ -683,51 +1397,254 @@ class="nav-link2 w-nav-link">Acknowledgements</a></nav>
     (12.541734%-11.43746%)/(365*24*3600s).  If nuclear were included as a low-carbon 
     source, the lifeline would be roughly 4.24% higher.</p>
 
+</div>  <!-- END COLLAPSIBLE -->
+
+
+</div>
+<br /><br />
+
+<!-- START COLLAPSIBLE CONTENT -->
+<button type="button" class="collapsible">Harvard Climate Clock</button>
+<div class="content">
+
+  <div class="section-subheading center">Harvard Lehman Hall, 2022 and 2023</div>
+	<br /><br />
+
+  <p>Beyond MIT, with Harvard students and colleagues, we helped them launch their 
+  first Harvard Climate Clock in Harvard Yard on the upper fa&ccedil;ade of Lehman Hall 
+  for Earth Day events on April 22nd, 2022 and again on Earth Day 2023.</p>
+
+
+  <div class="alignC">
+    <video class="height250" controls>
+      <source src="ccimg/Eshan_MITHarvardBackpack.mp4" type="video/mp4">
+      <!--<source src="movie.ogg" type="video/ogg">-->
+      Your browser does not support the video tag.
+      </video> 
+  </div>
+  <br />
+  <br />
+
+<p>Harvard got its own Climate Clock thanks to a Harvard PhD student, 
+Anita Chandrahas, who took the D-Lab class in 2022 and joined the MIT 
+Climate Clock team. Anita then brought a Climate Clock to Harvard while 
+also connecting with a "Great Food Transformation" class at Harvard. 
+Anita's work inspired a student team in that class to engage with the 
+LED Climate Backpack action.</p>
+
+  <div class="alignC">
+    <video class="width80" controls>
+      <source src="ccimg/Harvard_20220422.mp4" type="video/mp4">
+      <!--<source src="movie.ogg" type="video/ogg">-->
+      Your browser does not support the video tag.
+      </video> 
+  </div>
+  <br />
+  <br />
+  
+</div>
+<br /><br />
+
+
+<!-- START COLLAPSIBLE CONTENT -->
+<button type="button" class="collapsible">Climate Interactive En-ROADS</button>
+<div class="content">
+  
+   <div class="section-subheading center">MIT and Harvard, 2022 and 2023</div>
+	<br /><br />
+
+  
+  <p>As part of our parallel Earth-Day events at MIT and Harvard, we engaged 
+  people using <a target="_blank" href="https://www.climateinteractive.org/en-roads/">Climate 
+  Interactive's En-ROADS</a> simulator to learn about the climate.  
+  Plant-based ice cream served in compostable dishes was served to showcase 
+  sustainable food solutions.</p> 
+
+	<div class="alignC">
+	<table>
+	  <tr>
+		  <td><div><img src="ccimg/MIT_0422_enroads.jpg" class="height250" alt="En-ROADS at MIT on April 22 2022" /></div></td>
+		  <td><div><img src="ccimg/Harvard_0422screens.jpg" class="height250" alt="En-ROADS and Climate Clock projections at Harvard on April 22 2022" /></div></td>
+		</tr>
+	</table>
+	</div>
+	<div>Photo Credit: Ella Lopez</div>
+
+	
+<!--	<p>Going forward, we will integrate feedback from the community and seek 
+	long-term approval, now that we have successfully demonstrated "proof of concept."</p>
+-->
+	
+	</div>
+<br /><br />
+	
+	
+<!-- START COLLAPSIBLE CONTENT -->
+<button type="button" class="collapsible">Climate Clock Backpacks</button>
+<div class="content">
+	
+	<div class="section-subheading center">Streets of Cambridge, 2022 and 2023</div>
+	<br /><br />
+	
+	<div class="alignC">
+  	<table>
+  	
+		<tr>
+			<td>
+				<div class="alignC">
+				<video class="width80" controls>
+				<source src="ccimg/ClimateClockBackpackOnElectricScooter_ClaireWang_4-28-22.mp4" type="video/mp4">
+				<!--<source src="movie.ogg" type="video/ogg">-->
+				Your browser does not support the video tag.
+				</video><br />
+				Credit: Claire Wang
+				</div>
+			</td>
+			<td><p>Beyond the big screen, we've gone mobile via backpack!  Gaurav Patekar (MIT'21) 
+  	    conceived of a community awareness project where climate information is displayed 
+  			on an LED backpack.  People can volunteer to borrow the backpack for a week, 
+				sparking conversations about our climate.  Volunteers can then pass the 
+				backpack on to another person to continue the chain of engagement.</p>
+			</td>
+  		</tr>
+  	</table>
+	</div>
+	<br /><br />
+	
+	<div class="alignC">
+  	<table>
+  	  <tr>
+  		  <td><div><img src="ccimg/D-LabClassTeamPhoto1_ClimateClockLEDBackpack_4-28-22.jpg" class="height300" alt="Group showing off Climate LED backpacks" /></div></td>
+  		  <td><div><img src="ccimg/D-LabClassTeamPhoto2_HenriJessica_ClimateClockLEDBackpack_4-28-22.jpg" class="height300" alt="Henri and Jessica with backpacks showing 420ppm CO2 in atm. and climate deadline 7 years 3 months" /></div></td>
+  	  </tr>
+  	</table>
+	</div>
+</div>
+<br /><br />
+
 </section>
 
-<section id="creation" class="section">
-   <div> <!-- class="w-row">-->
+<!-- SCRIPT FOR activing COLLAPSIBLE ELEMENTS (NEEDS to be AFTER the content-->
+<script> 
+var coll = document.getElementsByClassName("collapsible");
+var ii;
+
+for (ii = 0; ii < coll.length; ii++) {
+  coll[ii].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+} 
+</script>
+
+<section id="solutions" class="section">
+  <div class="section-title-group">
+		<h2 class="section-heading centered">The Solutions</h2>
+    <div class="section-subheading center">Thinking Globally</div>
+  </div>
+	
+	<p>Speaking on Sept. 20, 2023, U.N. Secretary General Antonio Guterres 
+	said that: "Concentrations of CO<sub>2</sub> [are] at their highest in 
+	2 million years... [The] 1.5&deg; limit is achievable, but will take 
+	a quantum leap in climate action."</p>
+
+	<div>U.N. Secretary Guterres laid out a simple for leaders:</div>
+	<div>
+	<ul>
+		<li>Commit to reaching net zero as close as possible to 2040;</li>
+		<li>Ensure net zero electricity generation by 2035;</li>
+		<li>Cease funding new oil and gas;</li>
+		<li>Stop expansion of existing oil and gas reserves;</li>
+		<li>Shift fossil fuel subsidies to a just energy transition;</li>
+		<li>Detail actual emissions cuts for 2025 and 2030;</li>
+		<li>Deliver climate justice to those on the frontlines of many crises;</li>
+		<li>Scale up finance and capacities for adaptation and loss and damage;</li>
+		<li>Implement the Loss and Damage fund.”</li>
+	</ul>
+	</div>
+	
+	<p>Let's change our climate trends for the better by scaling up great solutions!</p>
+	
+	<p>To get started globally, the MIT Climate Clock Team endorses <a target="_blank" href="https://drawdown.org/solutions">Project 
+	Drawdown Solutions</a>. </p>
+	
+	<div class="alignC"><a target="_blank" href="ccimg/drawdownSolutions.PNG"><img src="ccimg/drawdownSolutions.PNG" 
+	alt="Project Drawdown Solutions across sectors to reduce sources, support sinks, and improve society" /></a></div>
+	
+	<br />
+  	
+		<p>For additional inspiration and action-oriented ideas, visit the following resources:</p>
+		
+	<div><ul>
+	<li>Hosted November 11-13, 2023, TEDx-Boston <a target="_blank" href=
+	"https://tedxboston.com/portfolio/planetary-stewardship-november-2023/">Planetary Stewardship</a> talks "elevate transformative 
+	ideas on climate"</li>
+	
+  	<li>Hosted November 13-14, 2022, TEDx-Boston <a target="_blank" href=
+	"https://tedxboston.com/planetary-stewardship/">Planetary Stewardship</a> talks "elevate transformative 
+	ideas on climate"</li>
+  	
+  	<li><a target="_blank" href="https://www.climateinteractive.org/">Climate Interactive</a>
+    "creates and shares tools that drive effective and equitable climate action." Policies 
+  	enable solutions, and what better way to learn than to try out simulated scenarios 
+  	yourself and share with others!</li>
+  	
+  	<li>MIT supports furthering education on solutions and involvment in research via the 
+  	<a target="_blank" href="https://climate.mit.edu">Climate Portal</a> where you can learn "<a 
+  	target="_blank" href="https://climate.mit.edu/what-can-be-done-about-climate-change">What Can Be Done About 
+	Climate Change</a>"</li>
+  	
+  	<li>MIT-Industry collaboration via the <a target="_blank" href="https://impactclimate.mit.edu/">MIT Climate 
+	and Sustainability Consortium</a> 
+  	is all about "working together to vastly accelerate the implementation of large-scale, 
+  	real-world solutions, across sectors, to help meet global climate and sustainability challenges"</li>
+  	
+  	<li>MIT <a target="_blank" href="https://climategrandchallenges.mit.edu/">Climate Grand Challenges</a> is 
+  	"a whole-of-MIT initiative to deliver high-impact climate solutions for the world"</li>
+	</ul></div>
+	
+	<p>For additional MIT Climate Solutions - stay tuned for updates!</p>
+	
+	<p>If you have a solution you'd like to share with us, please <a href="mailto:climateclock@mit.edu">Contact Us</a>.</p>
+	
+<br /><br />
+
 		 <div class="section-title-group">
-		<h2 class="section-heading centered">The Creation</h2>
-    <div class="section-subheading center">The Story of the Climate Clock</div>
-		 </div>
+       <h3 class="section-heading centered">Creating a Climate Clock</h3>
+  		 </div>
 		 
-		 <p>The MIT Climate Clock team originated as an <a target="_blank" 
-		 href="https://d-lab.mit.edu/news-blog/blog/mit-climate-clock-d-lab-water-climate-change-and-health">MIT D-Lab</a> term project in 
-		 Spring 2020, and has continued from then until now.  Originally conceived 
-		 of as a hack  part of a long tradition of <a target="_blank" 
-		 href="https://mitadmissions.org/discover/life-culture/hacks-tomfoolery-pranks/">hacks-tomfooler-pranks</a> 
-		 around campus &mdash; the climate clock idea has changed over time. It was originally 
-		 inspired by the CITGO sign in Boston, a prominent feature of the Boston 
-		 skyline, advertising a petroleum corporation. We wanted to create a new 
-		 landmark on the skyline, marking a different era with different priorities and values.</p>
-		 
-		 <p>The MIT Climate Clock team ultimately opted not to do the clock as a hack, 
-		 but instead to pursue MIT Administration approval, because we sought to display 
-		 the climate clock in the most fitting location on campus &mdash; the top of the 
-		 Department of Earth Atmospheric and Planetary Science building &mdash; and to do 
-		 so long-term. Like clocks in medieval town centers, we wanted our clock to 
-		 be seen every day at the center of our campus.</p>
-		 
-		 <br /><br />
-		 
-		 <div class="section-title-group">
-       <h3 class="section-heading centered">Building the Clock</h3>
-  		 <div class="section-subheading center">You can share the Climate Clock too! </div>
-		 </div>
+		 <p>Just a handful of team members took the climate clock idea from dream to 
+	reality, and we did so during the COVID-19 pandemic!</p>
+	
+	<div class="alignC">
+	<table>
+	  <tr>
+		  <td><div><img src="ccimg/jjproj.jpg" class="height250" alt="Jillian next to the projector on the West face" /></div></td>
+		  <td><div><img src="ccimg/gpproj.png" class="height250" alt="Gaurav and Alejandro during assembly" /></div></td>
+		  <td><div><img src="ccimg/adproj.jpg" class="height250" alt="Alejandro inside the projector doghouse" /></div></td>
+		</tr>
+	</table>
+	</div>
+	
+	
+	<p> Photos show MIT Climate 
+	Clock team members: Jillian James (MIT'10, '16) left, and Gaurav Patekar (MIT'21) 
+	center and Alejandro Diaz (MIT'21), right.</p>
+	
 		 
 		 <p>You can build a Climate Clock in your own home, community, school or university, 
-		 even at a public park or public square. You can promote a climate clock on social media.</p> 
-
-		 <p>How many students does it take to build a climate clock? Not very many, 
-		 actually (our core team is currently comprised of nine people).  Here are a few 
+		 even at a public park or public square. You can promote a climate clock on social media. Here are a few 
 		 resources if you want to build your own climate clock on your campus, school, 
 		 at work, in your city, or on a webpage.</p>
 		 
 
 <!--		 <div>Check out our design drawings for the housing enclosure that contains the projectors, HERE.</div>-->
 		 
-	</div>
 </section>
 
 <!-- image outside section to create wide width-->
@@ -770,202 +1687,18 @@ climate clock have put lots of helpful information.</p>
     <h3 class="section-heading centered">Media</h3>
     <div class="section-subheading center">Read more about our project and progress</div>
 	  <br /><br />
+		<p>WBUR 12-8-23: <a target="_blank" href="https://www.wbur.org/news/2023/12/08/climate-countdown-clock-mit-boston">MIT's climate clock says the globe will hit a critical warming mark in 6 months</a></p>
+		<p>Boston Globe 11-30-23: <a target="_blank" href="https://www.bostonglobe.com/2023/11/30/metro/mit-climate-clock-cop28/">Massive clock projection at MIT uses local twist to track climate crisis</a></p>
 		<p>WGBH 4-22-22: <a target="_blank" href="https://www.wgbh.org/news/local-news/2022/04/22/mit-teams-climate-clock-will-shine-over-cambridge-to-raise-awareness-of-climate-change">MIT team's climate clock will shine over Cambridge</a></p>
-    <p>Boston Globe 4-24-2021: <a target="_blank" href="https://www.bostonglobe.com/2021/04/24/metro/mit-students-display-climate-clock-outside-green-building-cambridge/">MIT Students Display Climate Clock</a></p>
-    <p>MIT D-Lab 4-22-2021: <a target="_blank" href="https://d-lab.mit.edu/news-blog/blog/mit-climate-clock-d-lab-water-climate-change-and-health">MIT Climate Clock from D-Lab</a></p>
-    <p>Climate Portal 12-16-2020: <a target="_blank" href="https://climate.mit.edu/posts/students-and-alumni-are-building-mit-climate-clock">Students are building an MIT "Climate Clock"</a></p>
-    <p>MIT Open: <a target="_blank" href="https://open.mit.edu/c/maca/3by/mit-dlab-launches-climate-clock-on-green-bldg">MIT D-Lab Launches Climate Clock on Green Bldg</a></p>
-    <p>Boston.com 4-26-2021: <a target="_blank" href="https://www.boston.com/news/local-news/2021/04/26/mit-climate-clock">MIT projects climate clock onto building</a></p>
-    <p>Climate Portal: <a target="_blank" href="https://climate.mit.edu/explainers/freshwater-and-climate-change">Freshwater and Climate</a></p>
-		
+		<p>Boston Globe 4-24-2021: <a target="_blank" href="https://www.bostonglobe.com/2021/04/24/metro/mit-students-display-climate-clock-outside-green-building-cambridge/">MIT Students Display Climate Clock</a></p>
+		<p>MIT D-Lab 4-22-2021: <a target="_blank" href="https://d-lab.mit.edu/news-blog/blog/mit-climate-clock-d-lab-water-climate-change-and-health">MIT Climate Clock from D-Lab</a></p>
+		<p>Climate Portal 12-16-2020: <a target="_blank" href="https://climate.mit.edu/posts/students-and-alumni-are-building-mit-climate-clock">Students are building an MIT "Climate Clock"</a></p>
+		<p>MIT Open: <a target="_blank" href="https://open.mit.edu/c/maca/3by/mit-dlab-launches-climate-clock-on-green-bldg">MIT D-Lab Launches Climate Clock on Green Bldg</a></p>
+		<p>Boston.com 4-26-2021: <a target="_blank" href="https://www.boston.com/news/local-news/2021/04/26/mit-climate-clock">MIT projects climate clock onto building</a></p>
+		<p>Climate Portal: <a target="_blank" href="https://climate.mit.edu/explainers/freshwater-and-climate-change">Freshwater and Climate</a></p>
+			
 
-</div>
-</section>
-
-
-<section id="future" class="section">
-<div class="w-container">
-
-  <div class="section-title-group">
-    <h2 class="section-heading centered">The Future</h2>
-    <div class="section-subheading center">Next Steps for the Climate Clock</div>
-  </div>
-	
-	<p>From April, 2021 to the present, the MIT Administration has approved and 
-	supported the MIT Climate Clock for four short-term projections:</p>
-	
-	<div>
-	<table>
-	<tr>
-		<td class="imgTable"><div><img src="ccimg/southfaceBig_april2021.png" class="height300" 
-		alt="MIT Green Building South Face April 2021" /><br />
-		Projection 1: April 22 (Earth Day) to April 30, 2021. The location of 
-		this projection was at the bottom of the south fa&ccedil;ade of the MIT Green Building.</div>
-		</td>
-		<td class="imgTable"><div><img src="ccimg/proj2_300.jpg" class="height300" alt="MIT Green Building West face Fall 2021" /><br />
-		Projection 2: October 29 to November 21, extended to December 21, 2021. The location of this 
-		projection was at the top of the west fa&ccedil;ade of the MIT Green Building.</div>
-		</td>
-		<td class="imgTable"><div><img src="ccimg/MIT_0422_greenbuilding.jpg" class="height300" 
-		alt="MIT Green Building Top South Face April 2022" /><br />
-		Projection 3: April 22 (Earth Day) to May 27, 2022. The location of this projection 
-		was at the top south fa&ccedil;ade of the MIT Green Building.</div>
-		</td>
-		<td class="imgTable"><div><img src="ccimg/2_CO2EmissionsBudgetTextfrMemorialDrive_JJ_300.jpg" class="height300" 
-		alt="MIT Green Building Top South Face April 2022" /><br />
-		Projection 4: November 8 to 18, 2022. The location of this projection 
-		was at the top south fa&ccedil;ade of the MIT Green Building.</div>
-		</td>
-	</tr>
-  </table>
-  </div>
-		
-	<p>Having now completed the 4th short-term projection of the MIT Climate Clock, 
-	we are once again requesting of the MIT Administration/MIT Climate Nucleus 
-	permission to display the MIT Climate Clock long-term.</p>
-
-	<p>In addition, the team has conducted a 10-question climate survey of the MIT 
-	community over a period of two weeks concurrent with COP 27. Survey results will 
-	be posted here once reviewed and approved by the Climate Nucleus.</p>
-
-	<p>In 2021, the team projected onto the west side of the Green building, as 
-	seen in the video below.</p>
-	
-  <div class="alignC">
-    <video class="width80" controls>
-      <source src="ccimg/MITClimateClock_WestFace_TopofGreenBldg_vid3_BEST_12-03-21.mp4" type="video/mp4">
-      <!--<source src="movie.ogg" type="video/ogg">-->
-      Your browser does not support the video tag.
-      </video><br />
-			Video Credit: Gaurav Patekar<br /><br />
-  </div>
-		
-  <p>Beyond MIT, with our partners and team members at Harvard University, we projected the climate 
-  clock in Harvard Square on Lehman Hall for an Earth Day event on April 22nd, 2022.</p>
-
-  <div class="alignC">
-    <video class="width80" controls>
-      <source src="ccimg/Harvard_20220422.mp4" type="video/mp4">
-      <!--<source src="movie.ogg" type="video/ogg">-->
-      Your browser does not support the video tag.
-      </video> 
-  </div>
-  <br />
-  <br />
-  
-  <p>As part of our parallel Earth-Day events at MIT and Harvard, we engaged 
-  people using <a target="_blank" href="https://www.climateinteractive.org/en-roads/">Climate 
-  Interactive's En-ROADS</a> simulator to learn about the climate.  
-  Plant-based ice cream served in compostable dishes was served to showcase 
-  sustainable food solutions.</p> 
-
-	<div class="alignC">
-	<table>
-	  <tr>
-		  <td><div><img src="ccimg/MIT_0422_enroads.jpg" class="height250" alt="En-ROADS at MIT on April 22 2022" /></div></td>
-		  <td><div><img src="ccimg/Harvard_0422screens.jpg" class="height250" alt="En-ROADS and Climate Clock projections at Harvard on April 22 2022" /></div></td>
-		</tr>
-	</table>
 	</div>
-	<div>Photo Credit: Ella Lopez</div>
-
-			<br />
-			<br />
-	<!-- INSERT 3 photos here of construction and operations -->
-	
-	<p>Just a handful of team members took the climate clock idea from dream to 
-	reality, and we did so during the COVID-19 pandemic!</p>
-	
-	<div class="alignC">
-	<table>
-	  <tr>
-		  <td><div><img src="ccimg/jjproj.jpg" class="height250" alt="Jillian next to the projector on the West face" /></div></td>
-		  <td><div><img src="ccimg/gpproj.png" class="height250" alt="Gaurav and Alejandro during assembly" /></div></td>
-		  <td><div><img src="ccimg/adproj.jpg" class="height250" alt="Alejandro inside the projector doghouse" /></div></td>
-		</tr>
-	</table>
-	</div>
-	
-	
-	<p> Photos show MIT Climate 
-	Clock team members: Jillian James (MIT'10, '16) left, and Gaurav Patekar (MIT'21) 
-	center and Alejandro Diaz (MIT'21), right.</p>
-	
-	
-	<p>Going forward, we will integrate feedback from the community and seek 
-	long-term approval, now that we have successfully demonstrated "proof of concept."</p>
-	
- <br /><br />
-	
-  <h3 class="section-heading centered">Climate Clock LED Backpack</h3>
-  <div class="section-subheading center">Taking the clock on the road</div>
-	<br /><br />
-	
-	<div class="alignC">
-  	<table>
-  	
-  	  <tr>
-  		  <td>
-  			  <div class="alignC">
-          <video class="width80" controls>
-          <source src="ccimg/ClimateClockBackpackOnElectricScooter_ClaireWang_4-28-22.mp4" type="video/mp4">
-          <!--<source src="movie.ogg" type="video/ogg">-->
-          Your browser does not support the video tag.
-          </video><br />
-					Credit: Claire Wang
-          </div>
-  	    </td>
-  		  <td><p>Beyond the big screen, we've gone mobile via backpack!  Gaurav Patekar (MIT'21) 
-  	    conceived of a community awareness project where climate information is displayed 
-  			on an LED backpack.  People can volunteer to borrow the backpack for a week, 
-				sparking conversations about our climate.  Volunteers can then pass the 
-				backpack on to another person to continue the chain of engagement.</p>
-				</td>
-  		</tr>
-  	</table>
-	</div>
-	<br /><br />
-	
-	<div class="alignC">
-  	<table>
-  	  <tr>
-  		  <td><div><img src="ccimg/D-LabClassTeamPhoto1_ClimateClockLEDBackpack_4-28-22.jpg" class="height300" alt="Group showing off Climate LED backpacks" /></div></td>
-  		  <td><div><img src="ccimg/D-LabClassTeamPhoto2_HenriJessica_ClimateClockLEDBackpack_4-28-22.jpg" class="height300" alt="Henri and Jessica with backpacks showing 420ppm CO2 in atm. and climate deadline 7 years 3 months" /></div></td>
-  		</tr>
-  	</table>
-	</div>
-	
-
-	<br /><br />
-	
-  <h3 class="section-heading centered">Vision of Hope</h3>
-  <div class="section-subheading center">"Together we can change!"</div>
-	<br /><br />
-	
-  <p>This project has given us hope. As one team member, Jenning Chen, MIT'21, 
-  puts it  "I am a senior. I am graduating after four years. Yet this is the 
-  best thing I have ever done at MIT."</p>
-  
-  <p>History has shown that with united action, we can have a global impact. 
-  It's been done before. For example, as a direct result of global actions 
-  taken after signing the historic Montreal Protocol, <a target="_blank" 
-  href="https://www.nasa.gov/feature/goddard/2020nasa-data-aids-ozone-hole-s-journey-to-recovery">satellite data</a> has shown 
-  that the ozone hole has healed.</p>
-  
-  <p>In 2021, climate campaigners at the Glasgow, Scotland Conference of the 
-  Parties COP26 turned out in huge numbers, massively exceeding expectations. 
-  Youth-led groups, such as Friday for the Future, Extinction Rebellion and 
-  the Saturday Global Day of Action showed that the climate movement by youth 
-  and ordinary citizens matters and can make a difference.</p>
-  
-  <p>Humans are a powerful species &mdash; we have changed the climate of the entire 
-  planet without intending to. Now, with conscious effort and the force of a 
-  committed global community, we must help create a livable climate to survive.  
-  By acting together, we can turn this emergency into an opportunity to create 
-  a better world. The ultimate goal that we aspire to is a habitable and 
-  equitable planet for all humans and all life on Earth.</p>
-	
-  </div>
 </section>
 
 
@@ -978,8 +1711,8 @@ climate clock have put lots of helpful information.</p>
 <p>The Climate Clock projections have been a sustained effort on the part of an outstanding 
 team. The undergraduate and graduate cross-disciplinary team comes from Electrical 
 Engineering and Computer Science, Mechanical Engineering, Aero-Astro, Chemistry, the 
-Media Lab, as well as Harvard University Law and Medical Schools, all tied together 
-through the D-Lab class project.</p>
+Media Lab, as well as Harvard University Law and Medical Schools, many tied in 
+through the D-Lab class projects.</p>
 <p>Original team members include <a target="_blank" href="https://alejandrodiazz.github.io/">Alejandro Diaz (MIT'21, Course 6.2)</a>, Gabriela 
 Cazares (MIT'2020, Course 5, now in a Ph.D. at UC-Berkeley studying atmospheric 
 chemistry) and Lowry Yankwich, Harvard Law School '22, all three of whom kicked 
@@ -989,7 +1722,8 @@ who has supported all aspects of the work. Spring 2021 term added new team membe
 Jenning Chen (MIT'21, Course 6.3) who worked with Alejandro to do all the programming, 
 as well as  Gaurav Patekar, MIT'21, Media Lab, who did major design work with 
 Alejandro to ensure that the Climate Clock actually went live, first in Spring 
-2021 and then Fall/Winter 2021. Our team leaders and mentors are Susan Murcott 
+2021 and then Fall/Winter 2021. Gaurav was also the creator of the LED Climate 
+backpacks. Our team leaders and mentors are Susan Murcott 
 (MIT'92), Lecturer, MIT D-Lab and Julie Simpson, Research Engineer, MIT Sea Grant.</p>
 </div>
 
@@ -1103,31 +1837,34 @@ Alejandro to ensure that the Climate Clock actually went live, first in Spring
 			
 		<div>
 			<ul>
-			  <li>MIT Alumni for Climate Action (MACA) for endorsing and promoting the MIT Climate Clock</li>
+  				<li>Greta Thunberg, plus Andrew Boyd and Gan Golan, the NY artists, all three of whom are the originators of the <a target="_blank" href="https://climateclock.world/story">first Climate Clock</a></li>
+			  	<li>Lisa Chaggari, Special Advisor to the Climate Nucleus and the Climate Working Groups</li>
+				<li>Anushree Chaudhuri, MIT UA</li>
+				<li>Joe Higgins, VP for Campus Services and Stewardship</li>
+				<li>Robert van der Hilst, Head, Earth Atmospheric and Planetary Sciences</li>
+				<li>Carl Holt, Media Asst. Dept. of Literature</li>
+				<li>Aaron Krol, MIT Environmental Solutions Initiative (ESI) Communications</li>
+				<li>Tim Jamison, Associate Provost</li>
+				<li>K.C. Lavery and Bob Dooley, Barr &amp; Barr Inc.  </li>
+				<li>Capital Projects: Sarah MacDonald-Williams, Project Manager, Sonia A. Richards, Admin. Asst., Michael A Smith</li> 
+				<li>Monica Lee, Senior Communications Officer, MIT Dept. of Building Construction</li>
+				<li>MIT Alumni for Climate Action (MACA) for endorsing and promoting the MIT Climate Clock</li>
+				<li>MIT Campus Police: Captain Martin and many officers</li>
+				<li>MIT D-Lab: Ana Patelic, Director D-Lab, Nancy Adams, D-Lab Communications Officer</li>
+				<li>MIT Institue Events: Ted Johnson and Judith Zinker</li>
+				<li>MIT Undergraduate Association (UA) Sustainability Committee: Cameron Dougal and Ethan Nguyen</li>
+				<li>Norah R. Miller and Eleanor Li, Nov-Dec 2023 "Hack the Climate Clock" Competition winning team</li>
+				<li>Paul Murphy III, MIT Dept. of Facilities. Program Mgr., Special Projects</li>
+				<li>Lachlan Patterson, Sr. Project Manager, MIT Dept. of Facilities</li>
+				<li>Brian Pretti, MIT Dept of Facilities</li>
+				<li>Shankar Raman, Professor of Literature</li>
+				<li>Agustin Rayo, Head SHASS</li>
+				<li>Rob Shea, MIT Audio-Visual</li>
+				<li>Jessie Smith, Director, Open Space Programming</li>
+				<li>David &amp; Ta, Barr &amp; Barr Inc. carpenters</li>
+				<li>David Thorburn, Emeritus Prof. Literature</li>
 				<li>Jim Zaorski, MIT '80, Course 2, for financial support of the Climate Clock</li>
 				<li>Maria Zuber and Jim Gomes, MIT Office of the Vice President for Research</li>
-				<li>Joe Higgins, VP for Campus Services and Stewardship</li>
-				<li>Tim Jamison, Associate Provost</li>
-				<li>Robert van der Hilst, Head, Earth Atmospheric and Planetary Sciences</li>
-				<li>Ana Patelic, Director D-Lab</li>
-				<li>Lachlan Patterson, Sr. Project Manager, MIT Dept. of Facilities</li>
-				<li>Paul Murphy III, MIT Dept. of Facilities. Program Mgr., Special Projects</li>
-				<li>Captain Martin and many officers, MIT Campus Police</li>
-				<li>Brian Pretti, MIT Dept of Facilities</li>
-				<li>K.C. Lavery and Bob Dooley, Barr &amp; Barr Inc.  </li>
-				<li>David &amp; Ta, Barr &amp; Barr Inc. carpenters</li>
-				<li>Rob Shea at MIT AV</li>
-				<li>Michael A Smith,  Sarah MacDonald-Williams, Project Manager, Sonia A Richards,  Admin Asst, Capital Projects</li> 
-				<li>Monica Lee, Senior Communications Officer, MIT Dept. of Building Construction</li>
-				<li>David Thorburn, Prof. Literature</li>
-				<li>Shankar Ramon, Section head Literature</li>
-				<li>Agustin Rayo, Head SHASS</li>
-				<li>The 14 faculty member "Climate Nucleus"</li>
-				<li>Lianne Martin, Campus Activities Complex</li>
-				<li>Nancy Adams, D-Lab Communications Officer</li>
-				<li>Ted Johnson and Judith Zinker, MIT Institute Events</li>
-				<li>Jessie Smith, Director, Open Space Programming</li>
-				<li>Greta Thunberg, plus Andrew Boyd and Gan Golan, the NY artists, all three of whom are the originators of the <a target="_blank" href="https://climateclock.world/story">first Climate Clock</a></li>
 			</ul>
 		</div>
 		
